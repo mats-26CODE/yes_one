@@ -1,0 +1,147 @@
+.design_container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.design_header_box {
+    padding-top: 1rem;
+}
+
+.design_header_box h4 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.design_intro h5 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    width: 68%;
+    margin: 1rem auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.design_section {
+    padding: 6rem 0 4rem 0;
+}
+
+.design_categories {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #323232;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.design_categories p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem;
+}
+
+.design_categories span {
+    font-size: 2.3rem;
+    color: #ffffff;
+}
+
+.design_inspire {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.design_inspirebox {
+    background-color: #323232;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.dev_curve {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #171719;
+    border-radius: 0% 0% 22% 94% / 14% 0% 10% 100%;
+    /* border-radius: 0% 0% 84% 41% / 10% 10% 100% 9% ; */
+}
+
+.design_inspire_box {
+    background-color: #D8D8D8;
+    border-radius: 1rem;
+    /* height: 50vh; */
+    width: 90%;
+    /* margin: 0 auto; */
+    padding: 0.5rem;
+}
+
+.design_inspire_box > div,
+.design_inspire_box_two > div,
+.design_inspire_box_three > div {
+    width: 50%;
+    margin: 0.2rem auto;
+    display: grid;
+    place-items: center;
+    background-color: #323232;
+    border-radius: 8rem;
+    padding: 4rem;
+}
+
+.design_inspire_box > div h4,
+.design_inspire_box_two > div h4,
+.design_inspire_box_three > div h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.design_inspire_box_two {
+    background-color: #828282;
+    border-radius: 1rem;
+    /* height: 50vh; */
+    width: 90%;
+    padding: 0.5rem;
+    margin: 10rem auto;
+}
+
+.design_inspire_box_three {
+    background-color: #D8D8D8;
+    border-radius: 1rem;
+    /* height: 50vh; */
+    width: 90%;
+    /* margin: 0 auto; */
+    padding: 0.5rem;
+    margin-top: 18rem;
+    float: right;
+}
+
+.design_arts_section {
+    width: 85%;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.design_arts_box > div,
+.design_arts_box_three > div {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-color: #828282;
+    margin: 1rem 0 0 0;
+}
+
+.design_arts_box_two {
+    display: grid;
+    place-items: center;
+}
+
+.design_arts_box_two > div {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #828282;
+}
+
+.design_arts_box_three {
+    float: right;
+}

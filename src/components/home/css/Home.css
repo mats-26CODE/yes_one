@@ -1,0 +1,211 @@
+.home_container {
+    padding: 1rem 0 1rem 0;
+}
+
+/* home intro */
+.home_intro {
+    padding-top: 1rem;
+}
+
+.home_intro h4 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    text-align: center;
+    width: 68%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.home_apps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.home_apps h5 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 1rem 0 1rem;
+}
+
+/* home cards */
+.home_cards_box {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.home_card_one {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #D8D8D8;
+    height: 55vh;
+    border-radius: 0.9rem;
+    padding: 0.5rem;
+    transition: all .5s;    
+}
+
+.home_card_one > div:first-child {
+    background-color: #828282;
+    display: grid;
+    place-items: center;
+    height: 30vh;
+    border-radius: 0.9rem;
+}
+
+.home_card_one > div:first-child h4,
+.home_card_two > div:last-child h4 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: normal;
+    transition: all .5s;
+}
+
+.home_card_one > div:last-child {
+    margin-top: 3.5rem;
+}
+
+.home_card_one > div:last-child > div, 
+.home_card_two > div:first-child > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home_card_one > div:last-child > div h5,
+.home_card_two > div:first-child > div h5 {
+    font-size: 1rem;
+    color: #828282;
+    line-height: 1.6;
+    transition: all .5s;
+}
+
+.home_card_two {
+    width: 60%;
+    margin: 6.5rem auto;
+    background-color: #D8D8D8;
+    height: 40vh;
+    border-radius: 0.9rem;
+    padding: 0.5rem;
+    position: relative;
+    transition: all .5s;
+}
+
+.home_card_two > div:last-child {
+    background-color: #828282;
+    display: grid;
+    place-items: center;
+    height: 22vh;
+    border-radius: 0.9rem;
+    position: absolute;
+    bottom: 0.5rem;
+    width: 93.5%;
+}
+
+.home_card_one:hover,
+.home_card_two:hover {
+    transition: all .5s;
+    transform: scale(1.1);
+}
+
+.home_card_one > div:last-child > div h5:hover,
+.home_card_two > div:first-child > div h5:hover,
+.home_card_one > div:first-child h4:hover,
+.home_card_two > div:last-child h4:hover {
+    transition: all .5s;
+    transform: scale(.9);
+}
+
+
+/* Development / design / team sections */
+.section_box {
+    width: 85%;
+    margin: 6rem auto;
+}
+
+.section_two_box {
+    width: 85%;
+    margin: 6rem auto;
+}
+
+.team_art_box {
+    background: transparent;
+    height: 40vh;
+    width: 45%;
+    border-radius: 0.5rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.section_art_box {
+    background: #828282;
+    height: 40vh;
+    width: 75%;
+    border-radius: 0.5rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.section_two_art_box {
+    background: #828282;
+    height: 40vh;
+    width: 75%;
+    border-radius: 0.5rem;
+    position: relative;
+    float: right;
+    margin-top: 6rem;
+}
+
+.section_intro_box {
+    padding-top: 1rem;
+}
+
+.section_intro_box h4 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.section_intro_box p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.section_intro_box button {
+    margin-top: 1rem;
+}
+
+.note_right {
+    position: absolute;
+    top: -2.6rem;
+    right: -2.8rem;
+}
+
+.note_left {
+    position: absolute;
+    top: -2.6rem;
+    left: -2.8rem;
+}
+
+/*  combo projects box */
+.section_projects_container {
+    padding: 2rem 0 4rem 0;
+}
+
+.section_projects_container > div:first-child h4 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.section_projects_container > div:last-child {
+    margin-top: 1rem;
+}
+
+.projects_slider p {
+    font-size: 1.4rem;
+    color: #ffffff;
+}

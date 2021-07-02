@@ -1,0 +1,89 @@
+.note_callout_box,
+.left_note_callout_box,
+.bottom_left_note_callout_box  {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #F5A623;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.bottom_note_callout_box  {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #F5A623;
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform: rotate(90deg);
+}
+
+
+
+.note_callout_box > div:first-child {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* left: 50%;
+    transform: translate(-50, 50); */
+    background-color: #F5A623;
+}
+
+.bottom_note_callout_box > div:first-child {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* left: 50%;
+    transform: translate(-50, 50); */
+    background-color: #F5A623;
+}
+
+.note_callout_box h4,
+.bottom_note_callout_box h4,
+.left_note_callout_box h4,
+.bottom_left_note_callout_box h4 {
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.left_note_callout_box > div:first-child {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* left: 50%;
+    transform: translate(-50, 50); */
+    background-color: #F5A623;
+}
+
+.bottom_left_note_callout_box {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #F5A623;
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform: rotate(-90deg);
+}
+
+.bottom_left_note_callout_box > div:first-child{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* left: 50%;
+    transform: translate(-50, 50); */
+    background-color: #F5A623;
+}

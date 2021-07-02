@@ -1,0 +1,41 @@
+footer {
+    padding: 1.5rem;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.footer_intro h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    /* margin-top: 1rem; */
+}
+
+.footer_social_box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer_social_box > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: #D8D8D8;
+    display: grid;
+    place-items: center;
+    margin: 0 0.2rem 0 0.2rem;
+    transition: all .5s;
+}
+
+.footer_social_box > div:hover {
+    cursor: pointer;
+    transition: all .5s;
+    transform: scale(1.1);
+}
+
+.footer_copyright h5 {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 1.5rem;
+}

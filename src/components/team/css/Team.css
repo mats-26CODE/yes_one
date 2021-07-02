@@ -1,0 +1,111 @@
+.team_container {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+.team_header_box,
+.clients_header_box {
+    padding-top: 1rem;
+}
+
+#team_to_career_link a {
+    text-decoration: none;
+    color: #F5A623;
+}
+
+.team_header_box h4 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.team_intro h5 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    width: 68%;
+    margin: 1rem auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.team_brain {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #323232;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.team_title h4 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+.team_section {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.team_traits_box {
+    display: grid;
+    place-items: center;
+}
+
+.team_traits_box h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.team_traits_box p {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.team_traits_box h1 {
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.client_section {
+    width: 80%;
+    margin: 2rem auto;
+    background-color: #323232;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.clients_header_box h4 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-left: 0.5rem;
+}
+
+.client_box {
+    margin: 1rem;
+    background-color: #828282;
+    border-radius: 3rem;
+    padding: 2.5rem;
+    display: grid;
+    place-items: center;
+    /* height: 20vh; */
+}
+
+.client_care_box p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #F5A623;
+    margin-top: 1rem;
+}

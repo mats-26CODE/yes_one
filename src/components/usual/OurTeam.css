@@ -1,0 +1,16 @@
+.our_team_container {
+   
+}
+
+.our_team_container > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem;
+    transition: all .5s;
+}
+
+.our_team_container > div:hover {
+    transition: all .5s;
+    transform: scale(.8);
+}
