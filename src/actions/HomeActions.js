@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import db from "../firebase";
+import db from '../firebase';
 import { useDispatch } from "react-redux";
 import {
   header,
@@ -12,7 +12,7 @@ import {
   secTwoImage,
 } from "../features/home/homeSlice";
 
-export default function HomeActions() {
+const HomeActions = () => {
   //-> redux dispatch
   const dispatch = useDispatch();
 
@@ -249,3 +249,5 @@ export default function HomeActions() {
 
   return <div></div>;
 }
+
+export default HomeActions;

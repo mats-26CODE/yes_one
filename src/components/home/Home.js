@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import db from "../../firebase";
 // import firebase from "firebase";
 // import { useDocument, useCollection } from "react-firebase-hooks/firestore";
@@ -20,6 +20,8 @@ import ButtonTwo from "../usual/ButtonTwo";
 import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import OurTeam from "../usual/OurTeam";
 import SectionProject from "./sections/SectionProject";
+import HomeActions from "../../actions/HomeActions";
+
 import {
   selectHomeHeader,
   selectHomeProducts,
@@ -32,7 +34,6 @@ import {
 } from "../../features/home/homeSlice";
 
 const Home = () => {
-  
   //-> home details from redux store
   const homeHeader = useSelector(selectHomeHeader);
   const homeProducts = useSelector(selectHomeProducts);
@@ -192,11 +193,16 @@ const Home = () => {
               top={true}
             />
           }
-          bgImage={sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null}
-          heading={ sectionTwoHeader ? `${sectionTwoHeader.sectionTwoHeader}` : "Design"}
+          bgImage={
+            sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null
+          }
+          heading={
+            sectionTwoHeader ? `${sectionTwoHeader.sectionTwoHeader}` : "Design"
+          }
           intro={
-              sectionTwoIntro ? `${sectionTwoIntro.sectionTwoIntro}` :
-            "We have the best creative minds on board, we shape ideas into beautiful functional products, as good as you can imagine."
+            sectionTwoIntro
+              ? `${sectionTwoIntro.sectionTwoIntro}`
+              : "We have the best creative minds on board, we shape ideas into beautiful functional products, as good as you can imagine."
           }
           button={<ButtonTwo text={"See more"} />}
         />
@@ -223,6 +229,9 @@ const Home = () => {
       <div>
         <SectionProject />
       </div>
+
+      {/* Mount the action component, not ideal / i dont know why it works this way with redux */}
+      <HomeActions />
     </div>
   );
 };
