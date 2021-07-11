@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import db from "../../firebase";
-import firebase from "firebase";
-import { useDocument, useCollection } from "react-firebase-hooks/firestore";
+import React from "react";
+// import db from "../../firebase";
+// import firebase from "firebase";
+// import { useDocument, useCollection } from "react-firebase-hooks/firestore";
 import { Button, Grid } from "@material-ui/core";
 import {
   IoEllipseSharp,
@@ -9,7 +9,7 @@ import {
   IoPeopleCircleOutline,
 } from "react-icons/io5";
 import { ImPen } from "react-icons/im";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 //-> css and components file import
 import "./css/Home.css";
@@ -20,56 +20,58 @@ import ButtonTwo from "../usual/ButtonTwo";
 import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import OurTeam from "../usual/OurTeam";
 import SectionProject from "./sections/SectionProject";
-import { header } from "../../features/home/homeSlice";
+import {
+  selectHomeHeader,
+  selectHomeProducts,
+  selectSectionOneHeader,
+  selectSectionOneIntro,
+  selectSectionOneImage,
+  selectSectionTwoHeader,
+  selectSectionTwoIntro,
+  selectSectionTwoImage,
+} from "../../features/home/homeSlice";
 
 const Home = () => {
-  //-> redux dispatch
-  const dispatch = useDispatch();
+  
+  //-> home details from redux store
+  const homeHeader = useSelector(selectHomeHeader);
+  const homeProducts = useSelector(selectHomeProducts);
+  const sectionOneHeader = useSelector(selectSectionOneHeader);
+  const sectionOneIntro = useSelector(selectSectionOneIntro);
+  const sectionOneImage = useSelector(selectSectionOneImage);
+  const sectionTwoHeader = useSelector(selectSectionTwoHeader);
+  const sectionTwoIntro = useSelector(selectSectionTwoIntro);
+  const sectionTwoImage = useSelector(selectSectionTwoImage);
 
-  //-> home fetching actions
-  useEffect(() => {
-    db.collection("home")
-      .doc("homeHeaderIntro")
-      .collection("homeHeader")
-      .doc("info")
-      .onSnapshot(
-        function(doc) {
-          //check if doc is available
-          if (doc.exists) {
-            const data = doc.data();
-            dispatch(
-              header({
-                header: data.homeHeader,
-              })
-            );
-            console.log("data", data);
-          }
-        },
-        function (error) {
-          console.log("Error fetching clients logos");
-          console.log(error);
-        }
-      );
-  }, []);
-
+  //   const [products, setProducts] = useState([]);
   return (
     <div className={"home_container"}>
       <div>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={"home_intro"}>
-              <h4>
-                At Yes Productions, we design and develop softwares for our
-                clients _ be one.
-              </h4>
+              {homeHeader ? (
+                <h4>{homeHeader.header}</h4>
+              ) : (
+                <h4>
+                  At Yes Productions, we design and develop softwares for our
+                  clients _ be one.
+                </h4>
+              )}
             </div>
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={"home_apps"}>
-              <h5>Mobile Apps</h5>
-              <IoEllipseSharp color={"#ffffff"} size={"0.5em"} />
-              <h5>Web Apps</h5>
+              {homeProducts ? (
+                <h4>In it</h4>
+              ) : (
+                <div>
+                  <h5>Mobile Apps</h5>
+                  <IoEllipseSharp color={"#ffffff"} size={"0.5em"} />
+                  <h5>Web Apps</h5>
+                </div>
+              )}
             </div>
           </Grid>
         </Grid>
@@ -157,9 +159,20 @@ const Home = () => {
         <SectionOne
           noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
           artClassName={"section_art_box"}
-          heading={"Development"}
+          bgImage={
+            sectionOneImage ? `${sectionOneImage.sectionOneImage}` : null
+          }
+          bgSize={"cover"}
+          bgRepeat={"no-repeat"}
+          heading={
+            sectionOneHeader
+              ? `${sectionOneHeader.sectionOneHeader}`
+              : "Development"
+          }
           intro={
-            "We love engineering your ideas into viable, productive products that will boost your business experience."
+            sectionOneIntro
+              ? `${sectionOneIntro.sectionOneIntro}`
+              : "We love engineering your ideas into viable, productive products that will boost your business experience."
           }
           button={<ButtonTwo text={"Learn more"} />}
         />
@@ -179,8 +192,10 @@ const Home = () => {
               top={true}
             />
           }
-          heading={"Design"}
+          bgImage={sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null}
+          heading={ sectionTwoHeader ? `${sectionTwoHeader.sectionTwoHeader}` : "Design"}
           intro={
+              sectionTwoIntro ? `${sectionTwoIntro.sectionTwoIntro}` :
             "We have the best creative minds on board, we shape ideas into beautiful functional products, as good as you can imagine."
           }
           button={<ButtonTwo text={"See more"} />}
