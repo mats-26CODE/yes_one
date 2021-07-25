@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 // import firebase from "firebase";
 // import { useDocument, useCollection } from "react-firebase-hooks/firestore";
 import { Button, Grid } from "@material-ui/core";
+import _ from "lodash";
 import {
   IoEllipseSharp,
   IoCheckboxOutline,
   IoPeopleCircleOutline,
 } from "react-icons/io5";
 import { ImPen } from "react-icons/im";
+import { FaFan } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 //-> css and components file import
@@ -20,7 +22,6 @@ import ButtonTwo from "../usual/ButtonTwo";
 import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import OurTeam from "../usual/OurTeam";
 import SectionProject from "./sections/SectionProject";
-import HomeActions from "../../actions/HomeActions";
 
 import {
   selectHomeHeader,
@@ -31,6 +32,9 @@ import {
   selectSectionTwoHeader,
   selectSectionTwoIntro,
   selectSectionTwoImage,
+  selectSectionThreeHeader,
+  selectSectionThreeIntro,
+  selectSectionThreeImage,
 } from "../../features/home/homeSlice";
 
 const Home = () => {
@@ -43,8 +47,34 @@ const Home = () => {
   const sectionTwoHeader = useSelector(selectSectionTwoHeader);
   const sectionTwoIntro = useSelector(selectSectionTwoIntro);
   const sectionTwoImage = useSelector(selectSectionTwoImage);
+  const sectionThreeHeader = useSelector(selectSectionThreeHeader);
+  const sectionThreeIntro = useSelector(selectSectionThreeIntro);
+  const sectionThreeImage = useSelector(selectSectionThreeImage);
 
   //   const [products, setProducts] = useState([]);
+
+  console.log("home products are -> ", homeProducts);
+
+  const productsData = () => {
+    if (homeProducts !== null) {
+      const productsData = homeProducts.products;
+      const products = _.map(productsData, product => product);
+        return (
+          <div className={"home_apps"}>
+            {
+              products.map(product => {
+                return (
+                  <h5>{product.homeProduct} <span><FaFan className={"fanIcon"} /></span></h5>
+                )
+              })
+            }
+          </div>
+        );
+    } else {
+      return <p style={{color: 'white'}}>No data!</p>
+    }
+  };
+
   return (
     <div className={"home_container"}>
       <div>
@@ -63,16 +93,17 @@ const Home = () => {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <div className={"home_apps"}>
-              {homeProducts ? (
-                <h4>In it</h4>
-              ) : (
-                <div>
-                  <h5>Mobile Apps</h5>
-                  <IoEllipseSharp color={"#ffffff"} size={"0.5em"} />
-                  <h5>Web Apps</h5>
-                </div>
-              )}
+            <div>
+              {/* {homeProducts
+                ? homeProducts.map((product, index) => {
+                    return (
+                      <div key={`${product}${index}`}>
+                        <h5>{product.homeProduct}</h5>
+                      </div>
+                    );
+                  })
+                : null} */}
+                {productsData()}
             </div>
           </Grid>
         </Grid>
@@ -210,7 +241,15 @@ const Home = () => {
 
       <div>
         <SectionOne
-          team={<OurTeam />}
+          team={
+            <OurTeam
+              memberOne={
+                sectionThreeImage
+                  ? `${sectionThreeImage.sectionThreeImage}`
+                  : null
+              }
+            />
+          }
           artClassName={"team_art_box"}
           noteCalloutRight={
             <NoteCalloutRight
@@ -218,9 +257,20 @@ const Home = () => {
               top={true}
             />
           }
-          heading={"The team behind"}
+          // bgImage={
+          //   sectionThreeImage ? `${sectionThreeImage.sectionThreeImage}` : null
+          // }
+          // bgSize={"cover"}
+          // bgRepeat={"no-repeat"}
+          heading={
+            sectionThreeHeader
+              ? `${sectionThreeHeader.sectionThreeHeader}`
+              : "The team behind"
+          }
           intro={
-            "Our love for engineering, creativity & design is being cherished by our great team."
+            sectionThreeIntro
+              ? `${sectionThreeIntro.sectionThreeIntro}`
+              : "Our love for engineering, creativity & design is being cherished by our great team."
           }
           button={<ButtonTwo text={"Our adventures"} />}
         />
@@ -229,9 +279,6 @@ const Home = () => {
       <div>
         <SectionProject />
       </div>
-
-      {/* Mount the action component, not ideal / i dont know why it works this way with redux */}
-      <HomeActions />
     </div>
   );
 };

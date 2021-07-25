@@ -10,6 +10,10 @@ import {
   secTwoHeader,
   secTwoIntro,
   secTwoImage,
+  secThreeHeader,
+  secThreeIntro,
+  secThreeImage,
+  comboProjects,
 } from "../features/home/homeSlice";
 
 const HomeActions = () => {
@@ -239,12 +243,124 @@ const HomeActions = () => {
         console.error(err);
       }
     };
+
+    //-> fetch sectionThree
+    const fetchSectionThreeHeader = async () => {
+      try {
+        db.collection("home")
+          .doc("homeSections")
+          .collection("sectionThree")
+          .doc("header")
+          .onSnapshot(
+            function (doc) {
+              //check if doc is available
+              if (doc.exists) {
+                const data = doc.data();
+                dispatch(
+                  secThreeHeader({
+                    sectionThreeHeader: data.sectionThreeHeader,
+                  })
+                );
+              }
+            },
+            function (error) {
+              console.log("Getting trouble fetching data");
+              console.log(error);
+            }
+          );
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    const fetchSectionThreeIntro = async () => {
+      try {
+        db.collection("home")
+          .doc("homeSections")
+          .collection("sectionThree")
+          .doc("intro")
+          .onSnapshot(
+            function (doc) {
+              //check if doc is available
+              if (doc.exists) {
+                const data = doc.data();
+                dispatch(
+                  secThreeIntro({
+                    sectionThreeIntro: data.sectionThreeIntro,
+                  })
+                );
+              }
+            },
+            function (error) {
+              console.log("Getting trouble fetching data");
+              console.log(error);
+            }
+          );
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    const fetchSectionThreeImage = async () => {
+      try {
+        db.collection("home")
+          .doc("homeSections")
+          .collection("sectionThree")
+          .doc("image")
+          .onSnapshot(
+            function (doc) {
+              //check if doc is available
+              if (doc.exists) {
+                const data = doc.data();
+                dispatch(
+                  secThreeImage({
+                    sectionThreeImage: data.sectionThreeImage,
+                  })
+                );
+              }
+            },
+            function (error) {
+              console.log("Getting trouble fetching data");
+              console.log(error);
+            }
+          );
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    //-> fetch home combo projects
+    
     fetchSectionOneHeader();
     fetchSectionOneIntro();
     fetchSectionOneImage();
     fetchSectionTwoHeader();
     fetchSectionTwoIntro();
     fetchSectionTwoImage();
+    fetchSectionThreeHeader();
+    fetchSectionThreeIntro();
+    fetchSectionThreeImage();
+  }, [dispatch]);
+
+  useEffect(() => {
+    const fetchComboProjects = async () => {
+      try {
+        db.collection("home")
+          .doc("homeProjects")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            // setProducts(snapshot.docs.map((doc) => doc.data()));
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              comboProjects({
+                comboProjects: data,
+              })
+            );
+            console.log("data projects", data);
+          });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchComboProjects();
   }, [dispatch]);
 
   return <div></div>;

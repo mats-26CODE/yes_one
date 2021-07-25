@@ -12,6 +12,7 @@ const initialState = {
   sectionThreeHeader: "",
   sectionThreeIntro: "",
   sectionThreeImage: "",
+  homeComboProjects: {},
 };
 
 export const homeSlice = createSlice({
@@ -24,6 +25,7 @@ export const homeSlice = createSlice({
     },
     products(state, action) {
       state.homeProducts = action.payload;
+      // console.log(state.homeProducts);
     },
     secOneHeader(state, action) {
       state.sectionOneHeader = action.payload;
@@ -43,6 +45,19 @@ export const homeSlice = createSlice({
     secTwoImage(state, action) {
       state.sectionTwoImage = action.payload;
     },
+    secThreeHeader(state, action) {
+      state.sectionThreeHeader = action.payload;
+    },
+    secThreeIntro(state, action) {
+      state.sectionThreeIntro = action.payload;
+    },
+    secThreeImage(state, action) {
+      state.sectionThreeImage = action.payload;
+    },
+    comboProjects(state, action) {
+      state.homeComboProjects = action.payload;
+      // console.log(state.homeComboProjects);
+    },
   },
 });
 
@@ -55,6 +70,10 @@ export const {
   secTwoHeader,
   secTwoIntro,
   secTwoImage,
+  secThreeHeader,
+  secThreeIntro,
+  secThreeImage,
+  comboProjects
 } = homeSlice.actions;
 
 // // The function below is called a selector and allows us to select a value from
@@ -68,5 +87,10 @@ export const selectSectionOneImage = (state) => state.home.sectionOneImage;
 export const selectSectionTwoHeader = (state) => state.home.sectionTwoHeader;
 export const selectSectionTwoIntro = (state) => state.home.sectionTwoIntro;
 export const selectSectionTwoImage = (state) => state.home.sectionTwoImage;
+export const selectSectionThreeHeader = (state) => state.home.sectionThreeHeader;
+export const selectSectionThreeIntro = (state) => state.home.sectionThreeIntro;
+export const selectSectionThreeImage = (state) => state.home.sectionThreeImage;
+export const selectComboProjects = (state) => state.home.homeComboProjects;
+
 
 export default homeSlice.reducer;

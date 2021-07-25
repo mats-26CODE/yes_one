@@ -16,17 +16,22 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const OurTeam = () => {
+const OurTeam = ({
+    memberOne,
+    memberTwo,
+    memberThree,
+    memberFour,
+}) => {
     const classes = useStyles();
     return (
         <div className={'our_team_container'}>
             <div>
-                <Avatar className={classes.small}>M</Avatar>
-                <Avatar className={classes.large}>A</Avatar>
+                <Avatar className={classes.small} src={`${memberOne}`} >M</Avatar>
+                <Avatar className={classes.large} src={`${memberTwo}`}>A</Avatar>
             </div>
             <div>
-                <Avatar className={classes.large}>T</Avatar>
-                <Avatar className={classes.small}>Y</Avatar>
+                <Avatar className={classes.large} src={`${memberThree}`}>T</Avatar>
+                <Avatar className={classes.small}src={`${memberFour}`}>Y</Avatar>
             </div>
         </div>
     )
