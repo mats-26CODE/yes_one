@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     navLink: {
       fontSize: '1rem',
       textDecoration: 'none',
-      fontFamily: 'sofiaProLight, sans-serif',
+      fontFamily: 'NunitoRegular, sans-serif',
       margin: '1rem',
       color: '#c5c5c5',
       '&:hover': {

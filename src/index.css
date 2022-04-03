@@ -3,14 +3,20 @@
 }
 
 @font-face{
-  font-family: 'sofiaProLight';
-  src: local('sofiaProLight'), url('./assets/fonts/sofiaProLight.otf') format('true');
-  font-weight: normal;
+  font-family: 'NunitoRegular';
+  src: url('./assets/fonts/Nunito-Regular.ttf') format('true');
+  /* font-weight: normal; */
+}
+
+@font-face{
+  font-family: 'FuturaMedium';
+  src: url('./assets/fonts/FuturaMedium.ttf') format('true');
+  /* font-weight: normal; */
 }
 
 body {
   margin: 0;
-  font-family: 'sofiaProLight', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'NunitoRegular', 'FuturaMedium', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
