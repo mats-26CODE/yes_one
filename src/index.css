@@ -14,6 +14,12 @@
   /* font-weight: normal; */
 }
 
+@font-face{
+  font-family: 'freeStyleScript';
+  src: url('./assets/fonts/freeStyleScript.ttf') format('true');
+  /* font-weight: normal; */
+}
+
 body {
   margin: 0;
   font-family: 'NunitoRegular', 'FuturaMedium', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

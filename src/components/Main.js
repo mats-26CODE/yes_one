@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //-> component imports 🚀
 import Home from "./home/Home";
@@ -9,11 +9,10 @@ import Team from "./team/Team";
 import Careers from "./careers/Careers";
 import NavBar from "./NavBar";
 import Footer from "./usual/Footer";
-import HomeActions from "../actions/HomeActions";
 
 const Main = () => {
   return (
-    <div>
+    <Router>
       <div className={"app_navbar"}>
         <NavBar />
       </div>
@@ -36,15 +35,12 @@ const Main = () => {
             <Careers />
           </Route>
         </Switch>
-
-        {/* Mount the action component, not ideal / i dont know why it works this way with redux */}
-        <HomeActions />
       </div>
 
       <div className={"app_footer"}>
         <Footer />
       </div>
-    </div>
+    </Router>
   );
 };
 

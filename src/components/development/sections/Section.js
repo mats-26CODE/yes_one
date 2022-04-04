@@ -1,113 +1,132 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
+import React from "react";
+import { Grid } from "@material-ui/core";
 
-const Section = ({ 
-    introLeft, 
-    noteCalloutLeftOne, 
-    noteCalloutLeftTwo, 
-    noteCalloutRightOne, 
-    noteCalloutRightTwo, 
-    heading, 
-    headingPresent,
-    intro, 
-    artwork, 
-    circleArtwork,
-    circleArtworkTwo,
-    principleOne,
-    principleTwo,
-    principleThree,
-    principleFour,
-    principleFive,
+const Section = ({
+  introLeft,
+  noteCalloutLeftOne,
+  noteCalloutLeftTwo,
+  noteCalloutRightOne,
+  noteCalloutRightTwo,
+  heading,
+  headingPresent,
+  intro,
+  artwork,
+  artworkImage,
+  artworkSize,
+  artworkRepeat,
+  artworkPosition,
+  circleArtwork,
+  circleArtworkTwo,
+  principleOne,
+  principleTwo,
+  principleThree,
+  principleFour,
+  principleFive,
 }) => {
-    return (
-        <div className={'dev_section_box'}>
-            {
-                // if intro stays at left side, then render the following
-                introLeft ? 
-                <Grid container>
-                    {/* if heading is presernt , then render heading here, else render artwork */}
-                    {
-                        headingPresent ? 
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            <div className={'dev_section_intro'}>
-                                <h4>{heading}</h4>
-                                <p>{intro}</p>
-                            </div>
-                        </Grid>
-                        :
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            {principleOne}
-                            {principleTwo}
-                            {principleThree}
-                            {principleFour}
-                            {principleFive}
-                        </Grid>
-                    }
-                    
-                    {
-                        artwork ? 
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            <div className={'dev_section_art'}>
-                                <div className={'note_top_left'}>
-                                    {noteCalloutLeftOne}
-                                </div>
-                                <div className={'note_bottom_left'}>
-                                    {noteCalloutLeftTwo}
-                                </div>
-                            </div>
-                        </Grid>
-                        :
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}>
-                                <div>
-                                    {circleArtwork}
-                                </div>
-                                <div>
-                                    {circleArtworkTwo}
-                                </div>
-                            </div>
-                        </Grid>
-                    }
-                </Grid>
-                // else if Intro stays at right side, then render the following
-                :
-                <Grid container>
-                    {
-                        artwork ? 
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            <div className={'dev_section_two_art'}>
-                                <div className={'note_top_right'}>
-                                    {noteCalloutRightOne}
-                                </div>
-                                <div className={'note_bottom_right'}>
-                                    {noteCalloutRightTwo}
-                                </div>
-                            </div>
-                        </Grid>
-                        :
-                        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}>
-                                <div>
-                                    {circleArtwork}
-                                </div>
-                                <div>
-                                    {circleArtworkTwo}
-                                </div>
-                            </div>
-                        </Grid>
-                    }
-                
-                    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <div className={'dev_section_intro_right'}>
-                            <h4>{heading}</h4>
-                            <p>{intro}</p>
-                        </div>
-                    </Grid>
-                </Grid>
-            }
-            
-        </div>
-    )
-}
+  return (
+    <div className={"dev_section_box"}>
+      {
+        //-> if intro stays at left side, then render the following
+        introLeft ? (
+          <Grid container>
+            {/* if heading is presernt , then render heading here, else render artwork */}
+            {headingPresent ? (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div className={"dev_section_intro"}>
+                  <div>
+                    <h4>{heading}</h4>
+                    <p>{intro}</p>
+                  </div>
+                </div>
+              </Grid>
+            ) : (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                {principleOne}
+                {principleTwo}
+                {principleThree}
+                {principleFour}
+                {principleFive}
+              </Grid>
+            )}
 
-export default Section
+            {artwork ? (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div
+                  className={"dev_section_art"}
+                  style={{
+                    backgroundImage: `url(${artworkImage})`,
+                    backgroundSize: `${artworkSize}`,
+                    backgroundRepeat: `${artworkRepeat}`,
+                    backgroundPosition: `${artworkPosition}`,
+                  }}
+                >
+                  <div className={"note_top_left"}>{noteCalloutLeftOne}</div>
+                  <div className={"note_bottom_left"}>{noteCalloutLeftTwo}</div>
+                </div>
+              </Grid>
+            ) : (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <div>{circleArtwork}</div>
+                  <div>{circleArtworkTwo}</div>
+                </div>
+              </Grid>
+            )}
+          </Grid>
+        ) : (
+          // else if Intro stays at right side, then render the following
+          <Grid container>
+            {artwork ? (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div
+                  className={"dev_section_two_art"}
+                  style={{
+                    backgroundImage: `url(${artworkImage})`,
+                    backgroundSize: `${artworkSize}`,
+                    backgroundRepeat: `${artworkRepeat}`,
+                    backgroundPosition: `${artworkPosition}`,
+                  }}
+                >
+                  <div className={"note_top_right"}>{noteCalloutRightOne}</div>
+                  <div className={"note_bottom_right"}>
+                    {noteCalloutRightTwo}
+                  </div>
+                </div>
+              </Grid>
+            ) : (
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <div>{circleArtwork}</div>
+                  <div>{circleArtworkTwo}</div>
+                </div>
+              </Grid>
+            )}
+
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <div className={"dev_section_intro_right"}>
+                <div>
+                  <h4>{heading}</h4>
+                  <p>{intro}</p>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        )
+      }
+    </div>
+  );
+};
+
+export default Section;

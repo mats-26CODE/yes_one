@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 
-//-> component imports
+//-> file imports
+import bgOne from '../../../assets/backgrounds/bgOne.svg';
 
 const SectionOne = ({
   noteCalloutRight,
@@ -13,9 +14,14 @@ const SectionOne = ({
   bgImage,
   bgSize,
   bgRepeat,
+  bgPosition,
 }) => {
   return (
-    <div className={"section_box"}>
+    <div className={"section_box"} style={{
+      backgroundImage: `url(${bgOne})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+    }}>
       <Grid container>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <div
@@ -24,6 +30,7 @@ const SectionOne = ({
               backgroundImage: `url(${bgImage})`,
               backgroundSize: `${bgSize}`,
               backgroundRepeat: `${bgRepeat}`,
+              backgroundPosition: `${bgPosition}`,
             }}
           >
             {noteCalloutRight ? (
@@ -36,9 +43,11 @@ const SectionOne = ({
 
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <div className={"section_intro_box"}>
-            <h4>{heading}</h4>
-            <p>{intro}</p>
-            {button}
+            <div>
+              <h4>{heading}</h4>
+              <p>{intro}</p>
+              {button}
+            </div>
           </div>
         </Grid>
       </Grid>

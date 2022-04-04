@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import db from '../firebase';
+import db from "../firebase";
 import { useDispatch } from "react-redux";
 import {
   header,
@@ -328,7 +328,7 @@ const HomeActions = () => {
     };
 
     //-> fetch home combo projects
-    
+
     fetchSectionOneHeader();
     fetchSectionOneIntro();
     fetchSectionOneImage();
@@ -363,7 +363,7 @@ const HomeActions = () => {
     fetchComboProjects();
   }, [dispatch]);
 
-  return <div></div>;
-}
+  return <></>;
+};
 
 export default HomeActions;

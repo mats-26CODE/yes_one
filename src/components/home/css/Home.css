@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .home_apps h5 {
@@ -32,14 +32,14 @@
 /* home cards */
 .home_cards_box {
   width: 80%;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .home_card_one {
   width: 60%;
   margin: 0 auto;
-  background-color: #d8d8d8;
-  height: 55vh;
+  background-color: #ffffff;
+  min-height: 300px;
   border-radius: 0.9rem;
   padding: 0.5rem;
   transition: all 0.5s;
@@ -83,7 +83,7 @@
 .home_card_two {
   width: 60%;
   margin: 6.5rem auto;
-  background-color: #d8d8d8;
+  background-color: #ffffff;
   height: 40vh;
   border-radius: 0.9rem;
   padding: 0.5rem;
@@ -129,7 +129,7 @@
 
 .team_art_box {
   background: transparent;
-  height: 40vh;
+  min-height: 400px;
   width: 45%;
   border-radius: 0.5rem;
   position: relative;
@@ -139,9 +139,9 @@
 
 .section_art_box {
   background: #828282;
-  height: 40vh;
-  width: 75%;
-  border-radius: 0.5rem;
+  min-height: 500px;
+  width: 70%;
+  border-radius: 1rem;
   position: relative;
   display: grid;
   place-items: center;
@@ -149,16 +149,18 @@
 
 .section_two_art_box {
   background: #828282;
-  height: 40vh;
-  width: 75%;
-  border-radius: 0.5rem;
+  min-height: 500px;
+  width: 70%;
+  border-radius: 1rem;
   position: relative;
   float: right;
   margin-top: 6rem;
 }
 
 .section_intro_box {
-  padding-top: 1rem;
+  min-height: 500px;
+  display: grid;
+  place-items: center;
 }
 
 .section_intro_box h4 {

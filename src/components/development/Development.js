@@ -1,119 +1,250 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
-import './css/Development.css';
+import React from "react";
+import { Grid } from "@material-ui/core";
+import "./css/Development.css";
+import { useSelector } from "react-redux";
+import _ from "lodash";
 
 //-> component imports
-import Section from './sections/Section';
-import NoteCalloutLeft from '../usual/NoteCalloutLeft';
-import NoteCalloutRight from '../usual/NoteCalloutRight';
-import CircleArt from '../usual/CircleArt';
-import CircleArtLeft from '../usual/CircleArtLeft';
-import Button from '../usual/Button';
+import Section from "./sections/Section";
+import NoteCalloutLeft from "../usual/NoteCalloutLeft";
+import NoteCalloutRight from "../usual/NoteCalloutRight";
+import CircleArt from "../usual/CircleArt";
+import CircleArtLeft from "../usual/CircleArtLeft";
+import Button from "../usual/Button";
+import {
+  selectDevHeader,
+  selectDevIntro,
+  selectDevQuote,
+  selectDevQuotee,
+  selectDevQuoteImage,
+  selectDevSectionOneHeader,
+  selectDevSectionOneIntro,
+  selectDevSectionOneImage,
+  selectDevSectionTwoHeader,
+  selectDevSectionTwoIntro,
+  selectDevSectionTwoImage,
+  selectDevSectionThreeHeader,
+  selectDevSectionThreeIntro,
+  selectDevSectionThreeImage,
+  selectDevSectionFourHeader,
+  selectDevSectionFourIntro,
+  selectDevSectionFourImage,
+} from "../../features/home/developmentSlice";
 
 const Development = () => {
-    return (
-        <div className={'development_container'}>
-            <Grid container>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <div className={'dev_header_box'}>
-                        <h4>Development <span id={'slash'}>/</span></h4>
-                    </div>
+  //-> development page details from redux store
+  const devHeader = useSelector(selectDevHeader);
+  const devIntro = useSelector(selectDevIntro);
+  const devQuote = useSelector(selectDevQuote);
+  const devQuotee = useSelector(selectDevQuotee);
+  const devQuoteImage = useSelector(selectDevQuoteImage);
 
-                    <div className={'dev_intro'}>
-                        <h5>
-                            From planning, analysis, design, implementation, testing & integration to maintenance, 
-                            We engineer operable, transitional and maintanable solutions. Our team of developers work hand in hand to 
-                            make sure the product at handhas the best code, functional features and the best user experience. 
-                        </h5>
-                    </div>
-                </Grid>
+  const devSectionOneHeader = useSelector(selectDevSectionOneHeader);
+  const devSectionOneIntro = useSelector(selectDevSectionOneIntro);
+  const devSectionOneImage = useSelector(selectDevSectionOneImage);
 
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <div className={'dev_art_box'}>
+  const devSectionTwoHeader = useSelector(selectDevSectionTwoHeader);
+  const devSectionTwoIntro = useSelector(selectDevSectionTwoIntro);
+  const devSectionTwoImage = useSelector(selectDevSectionTwoImage);
 
-                    </div>
-                </Grid>
+  const devSectionThreeHeader = useSelector(selectDevSectionThreeHeader);
+  const devSectionThreeIntro = useSelector(selectDevSectionThreeIntro);
+  const devSectionThreeImage = useSelector(selectDevSectionThreeImage);
+
+  const devSectionFourHeader = useSelector(selectDevSectionFourHeader);
+  const devSectionFourIntro = useSelector(selectDevSectionFourIntro);
+  const devSectionFourImage = useSelector(selectDevSectionFourImage);
+
+  //-> render sections data
+  const renderSectionOne = () => {
+    if (devSectionOneHeader && devSectionOneIntro && devSectionOneImage) {
+      return (
+        <Section
+          introLeft={true}
+          artwork={true}
+          artworkImage={`${devSectionOneImage.devSectionOneImage}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={'center'}
+          headingPresent={true}
+          heading={`${devSectionOneHeader.devSectionOneHeader}`}
+          intro={`${devSectionOneIntro.devSectionOneIntro}`}
+          noteCalloutRightOne={
+            <NoteCalloutRight top={true} slash={" < / > "} />
+          }
+          noteCalloutRightTwo={
+            <NoteCalloutRight top={false} slash={" < / > "} />
+          }
+        />
+      );
+    }
+  };
+
+  //-> render sections data
+  const renderSectionTwo = () => {
+    if (devSectionTwoHeader && devSectionTwoIntro && devSectionTwoImage) {
+      return (
+        <Section
+          introLeft={false}
+          artwork={true}
+          artworkImage={`${devSectionTwoImage.devSectionTwoImage}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={'center'}
+          headingPresent={true}
+          heading={`${devSectionTwoHeader.devSectionTwoHeader}`}
+          intro={`${devSectionTwoIntro.devSectionTwoIntro}`}
+          noteCalloutRightOne={
+            <NoteCalloutRight top={true} slash={" < / > "} />
+          }
+          noteCalloutRightTwo={
+            <NoteCalloutRight top={false} slash={" < / > "} />
+          }
+        />
+      );
+    }
+  };
+
+  //-> render sections data
+  const renderSectionThree = () => {
+    if (devSectionThreeHeader && devSectionThreeIntro && devSectionThreeImage) {
+      return (
+        <Section
+          introLeft={true}
+          artwork={true}
+          artworkImage={`${devSectionThreeImage.devSectionThreeImage}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={'center'}
+          headingPresent={true}
+          heading={`${devSectionThreeHeader.devSectionThreeHeader}`}
+          intro={`${devSectionThreeIntro.devSectionThreeIntro}`}
+          noteCalloutRightOne={
+            <NoteCalloutRight top={true} slash={" < / > "} />
+          }
+          noteCalloutRightTwo={
+            <NoteCalloutRight top={false} slash={" < / > "} />
+          }
+        />
+      );
+    }
+  };
+
+  //-> render sections data
+  const renderSectionFour = () => {
+    if (devSectionFourHeader && devSectionFourIntro && devSectionFourImage) {
+      return (
+        <Section
+          introLeft={false}
+          artwork={true}
+          artworkImage={`${devSectionFourImage.devSectionFourImage}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={'center'}
+          headingPresent={true}
+          heading={`${devSectionFourHeader.devSectionFourHeader}`}
+          intro={`${devSectionFourIntro.devSectionFourIntro}`}
+          noteCalloutRightOne={
+            <NoteCalloutRight top={true} slash={" < / > "} />
+          }
+          noteCalloutRightTwo={
+            <NoteCalloutRight top={false} slash={" < / > "} />
+          }
+        />
+      );
+    }
+  };
+
+  return (
+    <div className={"development_container"}>
+      <Grid container>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <div className={"dev_header_box"}>
+            {devHeader ? (
+              <h4>
+                {devHeader.devHeader} <span id={"slash"}>/</span>
+              </h4>
+            ) : (
+              <h4>
+                Development <span id={"slash"}>/</span>
+              </h4>
+            )}
+          </div>
+
+          <div className={"dev_intro"}>
+            {devIntro ? (
+              <h5>{devIntro.devIntro}</h5>
+            ) : (
+              <h5>
+                From planning, analysis, design, implementation, testing &
+                integration to maintenance, We engineer operable, transitional
+                and maintanable solutions. Our team of developers work hand in
+                hand to make sure the product at handhas the best code,
+                functional features and the best user experience.
+              </h5>
+            )}
+          </div>
+        </Grid>
+
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          {devQuoteImage ? (
+            <div
+              className={"dev_art_box"}
+              style={{
+                backgroundImage: `url(${devQuoteImage.devQuoteImage})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+            ></div>
+          ) : null}
+
+          {devQuote && devQuotee ? (
+            <div className={"dev__quote_box"}>
+              <div>
+                <p>{devQuote.devQuote}</p>
+                <h4>{devQuotee.devQuotee}</h4>
+              </div>
+            </div>
+          ) : null}
+        </Grid>
+      </Grid>
+
+      <div className={"development_section"}>{renderSectionOne()}</div>
+
+      <div className={"development_section"}>{renderSectionTwo()}</div>
+
+      <div className={"development_test_support"}>
+        {/* <div className={"dev_curve"}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div className={"dev_art_box_curve"}></div>
             </Grid>
+          </Grid>
+        </div> */}
+        <div className={"development_section"}>{renderSectionThree()}</div>
 
-            <div className={'development_section'}>
-                <Section 
-                    introLeft={true}
-                    artwork={true}
-                    headingPresent={true}
-                    heading={'Planning & Analysis'}
-                    intro={'In order to execute, we identify the idea, practically make assesment of the idea, and plan on how we will execute the idea to perfection. We gather requirements and make a thorough analysis of what the software will do.'}
-                    noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={' < / > '} />}
-                    noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={' < / > '}/>}
-                />
-            </div>
+        <div className={"development_section"}>{renderSectionFour()}</div>
 
-            <div className={'development_section'}>
-                <Section 
-                    introLeft={false}
-                    artwork={true}
-                    headingPresent={true}
-                    heading={'Design & Implementation'}
-                    intro={'We have the best UI / UX designers, our software products are engaging, easy to navigate through, offer the best user experience and eye catching. Our aproach has always been in making sure we finalize projects on time by implementing working functionalities correctly and efficiently. '}
-                    noteCalloutRightOne={<NoteCalloutRight top={true} slash={' < / > '} />}
-                    noteCalloutRightTwo={<NoteCalloutRight top={false} slash={' < / > '}/>}
-                />
-            </div>
-
-            <div className={'development_test_support'}>
-                <div className={'dev_curve'}>
-                    <Grid container>
-                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                            <div className={'dev_art_box_curve'}>
-
-                            </div>
-                        </Grid>
-                    </Grid>
+        <div className={"development_section"}>
+          <div className={"contact"}>
+            <Grid container>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div>
+                  <h4>Want a custom software and or a design ? </h4>
                 </div>
-                <div className={'development_section'}>
-                    <Section
-                        introLeft={true}
-                        artwork={false}
-                        headingPresent={true}
-                        heading={'Testing & Deploying'}
-                        intro={'Our testing engineers perform testing throughout the entire development process, we will test the product’s interaction,  functionalities. We are committed to making sure that every thing works perfectly and ready for deployment.  '}
-                        circleArtwork= {<CircleArt circleRight={true} />}
-                        circleArtworkTwo= {<CircleArt circleRight={false} />}
-                    />
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                <div>
+                  <Button text={"Get in touch"} />
                 </div>
-            
-                <div className={'development_section'}>
-                    <Section
-                        introLeft={false}
-                        artwork={false}
-                        headingPresent={true}
-                        heading={'Maintenance & Support'}
-                        intro={'We help maintain, support and keep track of the performance of the software for you, making sure its running at its peak, no need to worry, we got your back.'}
-                        circleArtwork= {<CircleArtLeft circleRight={true} />}
-                        circleArtworkTwo= {<CircleArtLeft circleRight={false} />}
-                    />
-                </div>
-
-                <div className={'development_section'}>
-                    <div className={'contact'}>
-                        <Grid container>
-                            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                                <div>
-                                    <h4>Want a custom software and or a design ? </h4>
-                                </div>
-                            </Grid>
-                            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                                <div>
-                                    <Button 
-                                        text={'Get in touch'}
-                                    />
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </div>
-            </div>
+              </Grid>
+            </Grid>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default Development;

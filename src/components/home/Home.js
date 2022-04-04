@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import db from "../../firebase";
 // import firebase from "firebase";
 // import { useDocument, useCollection } from "react-firebase-hooks/firestore";
-import { Button, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import _ from "lodash";
-import {
-  IoEllipseSharp,
-  IoCheckboxOutline,
-  IoPeopleCircleOutline,
-} from "react-icons/io5";
+import { IoCheckmarkDone, IoPeopleCircleOutline } from "react-icons/io5";
 import { ImPen } from "react-icons/im";
 import { FaFan } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -22,6 +18,7 @@ import ButtonTwo from "../usual/ButtonTwo";
 import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import OurTeam from "../usual/OurTeam";
 import SectionProject from "./sections/SectionProject";
+import bgOne from "../../assets/backgrounds/bgOne.png";
 
 import {
   selectHomeHeader,
@@ -51,27 +48,30 @@ const Home = () => {
   const sectionThreeIntro = useSelector(selectSectionThreeIntro);
   const sectionThreeImage = useSelector(selectSectionThreeImage);
 
-  //   const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
 
   console.log("home products are -> ", homeProducts);
 
   const productsData = () => {
     if (homeProducts !== null) {
       const productsData = homeProducts.products;
-      const products = _.map(productsData, product => product);
-        return (
-          <div className={"home_apps"}>
-            {
-              products.map(product => {
-                return (
-                  <h5>{product.homeProduct} <span><FaFan className={"fanIcon"} /></span></h5>
-                )
-              })
-            }
-          </div>
-        );
+      const products = _.map(productsData, (product) => product);
+      return (
+        <div className={"home_apps"}>
+          {products.map((product, index) => {
+            return (
+              <h5 key={index}>
+                {product.homeProduct}{" "}
+                <span>
+                  <FaFan className={"fanIcon"} />
+                </span>
+              </h5>
+            );
+          })}
+        </div>
+      );
     } else {
-      return <p style={{color: 'white'}}>No data!</p>
+      return <p style={{ color: "white" }}>No data!</p>;
     }
   };
 
@@ -103,7 +103,7 @@ const Home = () => {
                     );
                   })
                 : null} */}
-                {productsData()}
+              {productsData()}
             </div>
           </Grid>
         </Grid>
@@ -119,19 +119,19 @@ const Home = () => {
               <div>
                 <div>
                   <h5>Usability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Efficiency</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Correctness</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Functionality</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
               </div>
             </div>
@@ -142,15 +142,15 @@ const Home = () => {
               <div>
                 <div>
                   <h5>Portability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Adaptability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Reusability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
               </div>
               <div>
@@ -167,19 +167,19 @@ const Home = () => {
               <div>
                 <div>
                   <h5>Maintanability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Flexibility</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Scalability</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
                 <div>
                   <h5>Modularity</h5>
-                  <IoCheckboxOutline color={"#F5F5F5"} size={"1.1em"} />
+                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
                 </div>
               </div>
             </div>
@@ -187,7 +187,13 @@ const Home = () => {
         </Grid>
       </div>
 
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${bgOne})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <SectionOne
           noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
           artClassName={"section_art_box"}
@@ -196,6 +202,7 @@ const Home = () => {
           }
           bgSize={"cover"}
           bgRepeat={"no-repeat"}
+          bgPosition={"center"}
           heading={
             sectionOneHeader
               ? `${sectionOneHeader.sectionOneHeader}`
@@ -257,11 +264,6 @@ const Home = () => {
               top={true}
             />
           }
-          // bgImage={
-          //   sectionThreeImage ? `${sectionThreeImage.sectionThreeImage}` : null
-          // }
-          // bgSize={"cover"}
-          // bgRepeat={"no-repeat"}
           heading={
             sectionThreeHeader
               ? `${sectionThreeHeader.sectionThreeHeader}`

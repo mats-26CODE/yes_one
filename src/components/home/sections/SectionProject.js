@@ -25,10 +25,11 @@ const SectionProject = () => {
           bullets={true}
           organicArrows={true}
         >
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             return (
               //   <h5>{product.homeProduct} <span><FaFan className={"fanIcon"} /></span></h5>
               <div
+                key={index}
                 className={"projects_slider"}
                 style={{
                   backgroundImage: `url(${project.projectImage})`,
