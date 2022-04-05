@@ -1,7 +1,4 @@
 import React from "react";
-// import db from "../../firebase";
-// import firebase from "firebase";
-// import { useDocument, useCollection } from "react-firebase-hooks/firestore";
 import { Grid } from "@material-ui/core";
 import _ from "lodash";
 import { IoCheckmarkDone, IoPeopleCircleOutline } from "react-icons/io5";
@@ -48,10 +45,6 @@ const Home = () => {
   const sectionThreeIntro = useSelector(selectSectionThreeIntro);
   const sectionThreeImage = useSelector(selectSectionThreeImage);
 
-  // const [products, setProducts] = useState([]);
-
-  console.log("home products are -> ", homeProducts);
-
   const productsData = () => {
     if (homeProducts !== null) {
       const productsData = homeProducts.products;
@@ -93,18 +86,7 @@ const Home = () => {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <div>
-              {/* {homeProducts
-                ? homeProducts.map((product, index) => {
-                    return (
-                      <div key={`${product}${index}`}>
-                        <h5>{product.homeProduct}</h5>
-                      </div>
-                    );
-                  })
-                : null} */}
-              {productsData()}
-            </div>
+            <div>{productsData()}</div>
           </Grid>
         </Grid>
       </div>
@@ -197,7 +179,8 @@ const Home = () => {
         <SectionOne
           noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
           artClassName={"section_art_box"}
-          bgImage={
+          bgImage={bgOne}
+          artworkImage={
             sectionOneImage ? `${sectionOneImage.sectionOneImage}` : null
           }
           bgSize={"cover"}
@@ -231,9 +214,13 @@ const Home = () => {
               top={true}
             />
           }
-          bgImage={
+          bgImage={bgOne}
+          artworkImage={
             sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null
           }
+          bgSize={"cover"}
+          bgRepeat={"no-repeat"}
+          bgPosition={"center"}
           heading={
             sectionTwoHeader ? `${sectionTwoHeader.sectionTwoHeader}` : "Design"
           }

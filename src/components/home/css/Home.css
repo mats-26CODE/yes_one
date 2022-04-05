@@ -36,44 +36,44 @@
 }
 
 .home_card_one {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
   background-color: #ffffff;
-  min-height: 300px;
-  border-radius: 0.9rem;
+  min-height: 350px;
+  border-radius: 1.2rem;
   padding: 0.5rem;
   transition: all 0.5s;
 }
 
-.home_card_one > div:first-child {
+.home_card_one>div:first-child {
   background-color: #828282;
   display: grid;
   place-items: center;
   height: 30vh;
-  border-radius: 0.9rem;
+  border-radius: 1.2rem;
 }
 
-.home_card_one > div:first-child h4,
-.home_card_two > div:last-child h4 {
+.home_card_one>div:first-child h4,
+.home_card_two>div:last-child h4 {
   font-size: 1.6rem;
   color: #ffffff;
   font-weight: normal;
   transition: all 0.5s;
 }
 
-.home_card_one > div:last-child {
+.home_card_one>div:last-child {
   margin-top: 3.5rem;
 }
 
-.home_card_one > div:last-child > div,
-.home_card_two > div:first-child > div {
+.home_card_one>div:last-child>div,
+.home_card_two>div:first-child>div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.home_card_one > div:last-child > div h5,
-.home_card_two > div:first-child > div h5 {
+.home_card_one>div:last-child>div h5,
+.home_card_two>div:first-child>div h5 {
   font-size: 1rem;
   color: #828282;
   line-height: 1.6;
@@ -81,22 +81,22 @@
 }
 
 .home_card_two {
-  width: 60%;
+  width: 65%;
   margin: 6.5rem auto;
   background-color: #ffffff;
-  height: 40vh;
-  border-radius: 0.9rem;
+  min-height: 250px;
+  border-radius: 1.2rem;
   padding: 0.5rem;
   position: relative;
   transition: all 0.5s;
 }
 
-.home_card_two > div:last-child {
+.home_card_two>div:last-child {
   background-color: #828282;
   display: grid;
   place-items: center;
   height: 22vh;
-  border-radius: 0.9rem;
+  border-radius: 1.2rem;
   position: absolute;
   bottom: 0.5rem;
   width: 93.5%;
@@ -108,10 +108,10 @@
   transform: scale(1.1);
 }
 
-.home_card_one > div:last-child > div h5:hover,
-.home_card_two > div:first-child > div h5:hover,
-.home_card_one > div:first-child h4:hover,
-.home_card_two > div:last-child h4:hover {
+.home_card_one>div:last-child>div h5:hover,
+.home_card_two>div:first-child>div h5:hover,
+.home_card_one>div:first-child h4:hover,
+.home_card_two>div:last-child h4:hover {
   transition: all 0.5s;
   transform: scale(0.9);
 }
@@ -138,23 +138,41 @@
 }
 
 .section_art_box {
-  background: #828282;
+  background: transparent;
   min-height: 500px;
-  width: 70%;
-  border-radius: 1rem;
+  width: 90%;
   position: relative;
-  display: grid;
-  place-items: center;
+  text-align: center;
 }
 
 .section_two_art_box {
-  background: #828282;
+  background: transparent;
   min-height: 500px;
-  width: 70%;
+  width: 90%;
   border-radius: 1rem;
   position: relative;
   float: right;
   margin-top: 6rem;
+}
+
+.section_art_box img,
+.section_two_art_box img {
+  width: 90%;
+  object-fit: contain;
+  border-radius: 1rem;
+  transition: all .5s;
+}
+
+.section_art_box img:hover {
+  transition: all .5s;
+  transform: scale(1.03) rotate(1deg);
+  filter: grayscale(80%);
+}
+
+.section_two_art_box img:hover {
+  transition: all .5s;
+  transform: scale(1.03) rotate(-1deg);
+  filter: grayscale(80%);
 }
 
 .section_intro_box {
@@ -164,13 +182,13 @@
 }
 
 .section_intro_box h4 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #ffffff;
   line-height: 1.6;
 }
 
 .section_intro_box p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #ffffff;
   line-height: 1.4;
 }
@@ -196,40 +214,25 @@
   padding: 2rem 0 2rem 0;
 }
 
-.section_projects_container > div:first-child h4 {
+.section_projects_container>div:first-child h4 {
   font-size: 1.8rem;
   text-align: center;
   color: #ffffff;
   margin-bottom: 2rem;
 }
 
-.section_projects_container > div:last-child {
-  /* margin-top: 1rem; */
-}
-
-.projects_slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .projects_slider p {
-  font-size: 1.4rem;
+  font-size: 0.8rem;
   color: #ffffff;
-}
-
-.projects_slider p {
   position: absolute;
   bottom: 5%;
   left: 50%;
-  background-color: rgba(73, 73, 73, 0.6);
-  border: 0.1rem solid #B2B2B2;
+  /* background-color: rgb(28, 28, 28, 0.2);
+  border: 0.1rem solid #B2B2B2; */
   transform: translate(-50%, -50%);
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .fanIcon {
@@ -271,6 +274,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

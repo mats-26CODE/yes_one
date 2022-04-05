@@ -11,6 +11,7 @@ const SectionTwo = ({
   bgImage,
   bgSize,
   bgRepeat,
+  artworkImage,
 }) => {
   return (
     <div className={"section_two_box"}>
@@ -35,6 +36,11 @@ const SectionTwo = ({
             }}
           >
             <div className={"note_left"}>{noteCalloutLeft}</div>
+            {artworkImage ? (
+              <div>
+                <img src={artworkImage} alt={`${heading} artwork`} />
+              </div>
+            ) : null}
           </div>
         </Grid>
       </Grid>

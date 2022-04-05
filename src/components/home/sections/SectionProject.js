@@ -1,13 +1,22 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import AwesomeSlider from "react-awesome-slider";
-import CoreStyles from "react-awesome-slider/src/core/styles.scss";
-import AwesomeSliderStyles from "react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss";
 import _ from "lodash";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import { Navigation, Pagination } from "swiper";
+//-> import swiper styles
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
+import "swiper/modules/navigation/navigation.min.css";
 
 //-> redux data selector
 import { selectComboProjects } from "../../../features/home/homeSlice";
 import { useSelector } from "react-redux";
+
+//-> icon imports
+import {
+  IoChevronBackCircleSharp,
+  IoChevronForwardCircleSharp,
+} from "react-icons/io5";
 
 const SectionProject = () => {
   //-> redux data selected
@@ -18,51 +27,62 @@ const SectionProject = () => {
       const projectsData = homeComboProjects.comboProjects;
       const projects = _.map(projectsData, (project) => project);
       return (
-        <AwesomeSlider
-          cssModule={AwesomeSliderStyles}
-          animation="fold-out-animation"
-          mobileTouch={true}
-          bullets={true}
-          organicArrows={true}
-        >
-          {projects.map((project, index) => {
-            return (
-              //   <h5>{product.homeProduct} <span><FaFan className={"fanIcon"} /></span></h5>
-              <div
-                key={index}
-                className={"projects_slider"}
-                style={{
-                  backgroundImage: `url(${project.projectImage})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <p>{project.projectDescription}</p>
-              </div>
-            );
-          })}
-        </AwesomeSlider>
+        <>
+          <Swiper
+            slidesPerView={2}
+            rewind={true}
+            centeredSlides={true}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            navigation={{
+              prevEl: ".prev",
+              nextEl: ".next",
+              clickable: true,
+            }}
+            modules={[Navigation, Pagination]}
+            className="mySwiper"
+          >
+            {projects.map((project, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="projects_slider">
+                    <img src={project.projectImage} alt={"Project Artwork"} />
+                    <p>{project.projectDescription}</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+            <div className="prev">
+              <IoChevronBackCircleSharp className="iconArrow" />
+            </div>
+            <div className="next">
+              <IoChevronForwardCircleSharp className="iconArrow" />
+            </div>
+          </Swiper>
+        </>
       );
     } else {
       return (
-        <AwesomeSlider
-          cssModule={AwesomeSliderStyles}
-          animation="fold-out-animation"
-          mobileTouch={true}
-          bullets={true}
-          organicArrows={true}
-        >
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
+        <>
+          <Swiper
+            slidesPerView={"auto"}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
             }}
+            modules={[Pagination]}
+            className="mySwiper"
           >
-            <div>
-              <p style={{ color: "white" }}>PROJECTS WILL BE HERE SOON!</p>
-            </div>
-          </div>
-        </AwesomeSlider>
+            <SwiperSlide>
+              <div className="projects_slider">
+                <p>We'll showcase our projects soon</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </>
       );
     }
   };

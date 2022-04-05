@@ -1,10 +1,10 @@
-@media (prefers-reduced-motion: no-preference) {
-}
+@media (prefers-reduced-motion: no-preference) {}
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -49,4 +49,75 @@
   transition: all .3s;
   box-sizing: border-box;
   outline: none;
+}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  width: 80%;
+}
+
+.swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.swiper-slide:nth-child(3n) {
+  width: 40%;
+}
+
+.swiper-pagination-bullet-active {
+  color: #F5A623;
+  background: #ffffff;
+}
+
+.prev {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.next {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.iconArrow {
+  color: #F5A623;
+  font-size: 2.2rem;
 }
