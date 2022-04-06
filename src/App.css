@@ -14,6 +14,7 @@
   width: 100%;
   min-height: 100vh;
   background-color: #171719;
+  padding-top: 4rem;
 }
 
 .app_footer {
@@ -53,7 +54,7 @@
 
 .swiper {
   width: 100%;
-  height: 500px;
+  height: 550px;
   position: relative;
 }
 

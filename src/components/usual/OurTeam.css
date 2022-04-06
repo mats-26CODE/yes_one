@@ -1,8 +1,8 @@
 .our_team_container {
-   
+    /* background-color: bisque; */
 }
 
-.our_team_container > div {
+.our_team_container>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     transition: all .5s;
 }
 
-.our_team_container > div:hover {
+.our_team_container>div:hover {
     transition: all .5s;
     transform: scale(.8);
 }

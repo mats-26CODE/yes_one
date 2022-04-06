@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import _ from "lodash";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 //-> import swiper styles
 import "swiper/swiper.min.css";
 import "swiper/modules/pagination/pagination.min.css";
@@ -30,6 +30,10 @@ const SectionProject = () => {
         <>
           <Swiper
             slidesPerView={2}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
             rewind={true}
             centeredSlides={true}
             spaceBetween={30}
@@ -42,7 +46,7 @@ const SectionProject = () => {
               nextEl: ".next",
               clickable: true,
             }}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             className="mySwiper"
           >
             {projects.map((project, index) => {
@@ -68,12 +72,24 @@ const SectionProject = () => {
       return (
         <>
           <Swiper
-            slidesPerView={"auto"}
+            slidesPerView={2}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            rewind={true}
+            centeredSlides={true}
             spaceBetween={30}
             pagination={{
               clickable: true,
+              dynamicBullets: true,
             }}
-            modules={[Pagination]}
+            navigation={{
+              prevEl: ".prev",
+              nextEl: ".next",
+              clickable: true,
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
             className="mySwiper"
           >
             <SwiperSlide>

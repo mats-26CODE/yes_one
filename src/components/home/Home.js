@@ -4,6 +4,7 @@ import _ from "lodash";
 import { IoCheckmarkDone, IoPeopleCircleOutline } from "react-icons/io5";
 import { ImPen } from "react-icons/im";
 import { FaFan } from "react-icons/fa";
+import { FcIdea } from "react-icons/fc";
 import { useSelector } from "react-redux";
 
 //-> css and components file import
@@ -267,6 +268,54 @@ const Home = () => {
 
       <div>
         <SectionProject />
+      </div>
+
+      <div>
+        <SectionTwo
+          noteCalloutLeft={
+            <NoteCalloutLeft
+              icon={
+                <FcIdea
+                  color={"#ffffff"}
+                  size={"1.2em"}
+                  // style={{ transform: "rotate(-90deg)" }}
+                />
+              }
+              top={true}
+            />
+          }
+          bgImage={bgOne}
+          artworkImage={
+            sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null
+          }
+          bgSize={"cover"}
+          bgRepeat={"no-repeat"}
+          bgPosition={"center"}
+          heading={"Curious about who we are ?"}
+          intro={
+            "Founded in 2022, We have the best creative minds on board, we shape ideas into beautiful functional products, as good as you can imagine."
+          }
+          button={<ButtonTwo text={"See more"} />}
+        />
+      </div>
+
+      <div>
+        <SectionOne
+          noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
+          artClassName={"section_art_box"}
+          bgImage={bgOne}
+          artworkImage={
+            sectionOneImage ? `${sectionOneImage.sectionOneImage}` : null
+          }
+          bgSize={"cover"}
+          bgRepeat={"no-repeat"}
+          bgPosition={"center"}
+          heading={"Let's start a project together"}
+          intro={
+            "We believe that something truly amazing can come from combining your vision with our experience."
+          }
+          button={<ButtonTwo text={"Let's chat"} />}
+        />
       </div>
     </div>
   );
