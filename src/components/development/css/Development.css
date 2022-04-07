@@ -12,6 +12,7 @@
   color: #ffffff;
   text-align: center;
   line-height: 1.6;
+  letter-spacing: 1px;
 }
 
 #slash {
@@ -47,17 +48,17 @@
   place-items: center;
 }
 
-.dev__quote_box > div {
+.dev__quote_box>div {
   text-align: center;
 }
 
-.dev__quote_box > div p {
+.dev__quote_box>div p {
   font-size: 1rem;
   color: #ffffff;
   margin: 1rem;
 }
 
-.dev__quote_box > div h4 {
+.dev__quote_box>div h4 {
   font-size: 1.4rem;
   color: #ffffff;
   font-family: "freeStyleScript", "NunitoRegular", sans-serif;
@@ -79,24 +80,42 @@
   place-items: center;
 }
 
+.dev_section_intro>div>div:last-child,
+.dev_section_intro_right>div>div:last-child {
+  margin-top: 2rem;
+}
+
 .dev_section_intro_right {
   min-height: 500px;
   display: grid;
   place-items: center;
 }
 
-.dev_section_intro h4 {
+.dev_section_intro h4,
+.dev_section_intro_right h4 {
   font-size: 1.8rem;
   color: #ffffff;
   line-height: 1.6;
   text-align: left;
 }
 
-.dev_section_intro_right h4 {
-  font-size: 1.8rem;
+.dev_section_intro h5,
+.dev_section_intro_right h5 {
+  font-size: 1.2rem;
   color: #ffffff;
-  line-height: 1.6;
   text-align: left;
+}
+
+.dev_section_intro h6,
+.dev_section_intro_right h6 {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-left: 0.2rem;
+}
+
+.dev_trait_box {
+  margin-top: 0.8rem;
+  display: flex;
 }
 
 .dev_section_intro p,

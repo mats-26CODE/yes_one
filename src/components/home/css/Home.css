@@ -14,6 +14,7 @@
   width: 68%;
   margin: 0 auto;
   line-height: 1.6;
+  letter-spacing: 1px;
 }
 
 .home_apps {
@@ -185,6 +186,7 @@
   font-size: 2rem;
   color: #ffffff;
   line-height: 1.6;
+  letter-spacing: 1px;
 }
 
 .section_intro_box p {

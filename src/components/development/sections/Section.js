@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
 
 const Section = ({
   introLeft,
@@ -22,6 +23,7 @@ const Section = ({
   principleThree,
   principleFour,
   principleFive,
+  traits,
 }) => {
   return (
     <div className={"dev_section_box"}>
@@ -29,13 +31,34 @@ const Section = ({
         //-> if intro stays at left side, then render the following
         introLeft ? (
           <Grid container>
-            {/* if heading is presernt , then render heading here, else render artwork */}
+            {/* if heading is present , then render heading here, else render artwork */}
             {headingPresent ? (
               <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                 <div className={"dev_section_intro"}>
                   <div>
-                    <h4>{heading}</h4>
-                    <p>{intro}</p>
+                    <div>
+                      <h4>{heading}</h4>
+                      <p>{intro}</p>
+                    </div>
+
+                    <div>
+                      <h5>Our work's traits</h5>
+
+                      <div className="dev_trait_box">
+                        <IoChevronForwardCircleOutline
+                          size={"1em"}
+                          color={"#ffffff"}
+                        />
+                        <h6>Planning & Analysis</h6>
+                      </div>
+                      <div className="dev_trait_box">
+                        <IoChevronForwardCircleOutline
+                          size={"1em"}
+                          color={"#ffffff"}
+                        />
+                        <h6>Planning & Analysis</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Grid>

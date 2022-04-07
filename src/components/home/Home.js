@@ -17,6 +17,8 @@ import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import OurTeam from "../usual/OurTeam";
 import SectionProject from "./sections/SectionProject";
 import bgOne from "../../assets/backgrounds/bgOne.png";
+import appDesign from "../../assets/images/appdesign.jpg";
+import codeSnippet from "../../assets/images/codesnippet.jpg";
 
 import {
   selectHomeHeader,
@@ -182,7 +184,9 @@ const Home = () => {
           artClassName={"section_art_box"}
           bgImage={bgOne}
           artworkImage={
-            sectionOneImage ? `${sectionOneImage.sectionOneImage}` : null
+            sectionOneImage
+              ? `${sectionOneImage.sectionOneImage}`
+              : `${appDesign}`
           }
           bgSize={"cover"}
           bgRepeat={"no-repeat"}
@@ -217,7 +221,9 @@ const Home = () => {
           }
           bgImage={bgOne}
           artworkImage={
-            sectionTwoImage ? `${sectionTwoImage.sectionTwoImage}` : null
+            sectionTwoImage
+              ? `${sectionTwoImage.sectionTwoImage}`
+              : `${codeSnippet}`
           }
           bgSize={"cover"}
           bgRepeat={"no-repeat"}

@@ -2,27 +2,57 @@
   margin: 0;
 }
 
-@font-face{
-  font-family: 'NunitoRegular';
-  src: url('./assets/fonts/Nunito-Regular.ttf') format('true');
+@font-face {
+  font-family: "NunitoRegular";
+  src: url("./assets/fonts/Nunito-Regular.ttf") format("truetype");
   /* font-weight: normal; */
 }
 
-@font-face{
-  font-family: 'FuturaMedium';
-  src: url('./assets/fonts/FuturaMedium.ttf') format('true');
+@font-face {
+  font-family: "NunitoBold";
+  src: url("./assets/fonts/Nunito-Bold.ttf") format("truetype");
   /* font-weight: normal; */
 }
 
-@font-face{
-  font-family: 'freeStyleScript';
-  src: url('./assets/fonts/freeStyleScript.ttf') format('true');
+@font-face {
+  font-family: "NunitoLight";
+  src: url("./assets/fonts/Nunito-Light.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Lobster";
+  src: url("./assets/fonts/Lobster-Regular.ttf") format("truetype");
+  /* font-weight: normal; */
+}
+
+@font-face {
+  font-family: "FuturaMedium";
+  src: url("./assets/fonts/FuturaMedium.ttf") format("truetype");
+  /* font-weight: normal; */
+}
+
+@font-face {
+  font-family: "FuturaMediumItalic";
+  src: url("./assets/fonts/FuturaMediumItalic.ttf") format("truetype");
+  /* font-weight: normal; */
+}
+
+@font-face {
+  font-family: "FuturaBook";
+  src: url("./assets/fonts/FuturaBook.ttf") format("truetype");
+  /* font-weight: normal; */
+}
+
+@font-face {
+  font-family: "FreeStyleScript";
+  src: url("./assets/fonts/freeStyleScript.ttf") format("truetype");
   /* font-weight: normal; */
 }
 
 body {
   margin: 0;
-  font-family: 'NunitoRegular', 'FuturaMedium', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'FuturaMedium', 'NunitoRegular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
