@@ -17,17 +17,13 @@
   padding-top: 4rem;
 }
 
-.app_footer {
-  background-color: #828282;
-}
-
 #slash {
   color: #F5A623;
 }
 
 .contact {
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   padding: 2rem 0 2rem 0;
 }
 

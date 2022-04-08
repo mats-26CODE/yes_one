@@ -1,18 +1,14 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import "./css/Design.css";
-import { RiPenNibFill } from "react-icons/ri";
-import { GiFairyWand, GiEyedropper, GiMagnifyingGlass } from "react-icons/gi";
+import { VscArrowDown } from "react-icons/vsc";
 
 //-> component imports
-import NoteCalloutLeft from "../usual/NoteCalloutLeft";
-import NoteCalloutRight from "../usual/NoteCalloutRight";
-import Section from "../development/sections/Section";
-import DesignPrinciple from "../usual/DesignPrinciple";
 import SectionInspire from "./sections/SectionInspire";
 import SectionDesigns from "./sections/SectionDesigns";
-import Button from "../usual/Button";
 import SectionPrinciples from "./sections/SectionPrinciples";
+import GetInTouch from "../usual/GetInTouch";
+import designPop from "../../assets/images/designPop.jpg";
 
 const Design = () => {
   return (
@@ -47,9 +43,18 @@ const Design = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={"design_categories"}>
               <p>
-                From <span>UI/UX Design 👉 Logos 👉 Posters 👉 Labels 👉</span>{" "}
+                From{" "}
+                <span>
+                  UI/UX Design & Prototyping 👉 Logos 👉 Posters 👉 Labels 👉
+                  Graphical Collaterals
+                </span>{" "}
                 and more
               </p>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <div className="design__arrow_down">
+              <VscArrowDown className={"arrowIcon"} />
             </div>
           </Grid>
         </Grid>
@@ -79,36 +84,23 @@ const Design = () => {
         </div>
 
         <div className={"design_section"}>
-          <div className={"design_arts"}>
-            <Grid container>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <div className={"design_header_box"}>
-                  <h4>
-                    Our Designs <span id={"slash"}>/</span>
-                  </h4>
-                </div>
-              </Grid>
-            </Grid>
-
-            <div className={"design_arts_section"}>
-              <SectionDesigns />
-            </div>
-          </div>
-        </div>
-
-        <div className={"contact"}>
           <Grid container>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <div>
-                <h4>Want a custom software and or a design ? </h4>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <div>
-                <Button text={"Get in touch"} />
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div className={"design_arts_header"}>
+                <h4>
+                  Our Designs <span id={"slash"}>/</span>
+                </h4>
               </div>
             </Grid>
           </Grid>
+
+          <div className={"design_arts_section"}>
+            <SectionDesigns designArtwork={designPop} />
+          </div>
+        </div>
+
+        <div>
+          <GetInTouch />
         </div>
       </div>
     </div>

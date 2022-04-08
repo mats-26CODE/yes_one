@@ -37,7 +37,7 @@ const Main = () => {
         </Switch>
       </div>
 
-      <div className={"app_footer"}>
+      <div>
         <Footer />
       </div>
     </Router>

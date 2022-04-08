@@ -8,8 +8,6 @@ import _ from "lodash";
 import Section from "./sections/Section";
 import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import NoteCalloutRight from "../usual/NoteCalloutRight";
-import CircleArt from "../usual/CircleArt";
-import CircleArtLeft from "../usual/CircleArtLeft";
 import appDesign from "../../assets/images/appdesign.jpg";
 import {
   selectDevHeader,
