@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import "./css/Design.css";
 import { VscArrowDown } from "react-icons/vsc";
@@ -11,6 +11,9 @@ import GetInTouch from "../usual/GetInTouch";
 import designPop from "../../assets/images/designPop.jpg";
 
 const Design = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={"design_container"}>
       <Grid container>

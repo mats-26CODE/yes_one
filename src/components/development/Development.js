@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import "./css/Development.css";
 import { useSelector } from "react-redux";
@@ -34,6 +34,9 @@ import SectionThree from "./sections/SectionThree";
 import GetInTouch from "../usual/GetInTouch";
 
 const Development = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   //-> development page details from redux store
   const devHeader = useSelector(selectDevHeader);
   const devIntro = useSelector(selectDevIntro);

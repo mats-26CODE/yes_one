@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import _ from "lodash";
 import { IoCheckmarkDone, IoPeopleCircleOutline } from "react-icons/io5";
@@ -35,6 +35,9 @@ import {
 } from "../../features/home/homeSlice";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   //-> home details from redux store
   const homeHeader = useSelector(selectHomeHeader);
   const homeProducts = useSelector(selectHomeProducts);
