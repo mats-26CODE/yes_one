@@ -23,7 +23,7 @@ const SectionProject = () => {
   const homeComboProjects = useSelector(selectComboProjects);
 
   const projectsData = () => {
-    if (homeComboProjects !== null) {
+    if (homeComboProjects) {
       const projectsData = homeComboProjects.comboProjects;
       const projects = _.map(projectsData, (project) => project);
       return (
@@ -70,35 +70,33 @@ const SectionProject = () => {
       );
     } else {
       return (
-        <>
-          <Swiper
-            slidesPerView={2}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            rewind={true}
-            centeredSlides={true}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            navigation={{
-              prevEl: ".prev",
-              nextEl: ".next",
-              clickable: true,
-            }}
-            modules={[Navigation, Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <div className="projects_slider">
-                <p>We'll showcase our projects soon</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </>
+        <Swiper
+          slidesPerView={1}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          rewind={true}
+          centeredSlides={true}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          navigation={{
+            prevEl: ".prev",
+            nextEl: ".next",
+            clickable: true,
+          }}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <div className="projects_empty_slider">
+              <p>We'll showcase our projects soon</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       );
     }
   };

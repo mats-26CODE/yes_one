@@ -12,6 +12,7 @@ import DesignPrinciple from "../usual/DesignPrinciple";
 import SectionInspire from "./sections/SectionInspire";
 import SectionDesigns from "./sections/SectionDesigns";
 import Button from "../usual/Button";
+import SectionPrinciples from "./sections/SectionPrinciples";
 
 const Design = () => {
   return (
@@ -38,64 +39,7 @@ const Design = () => {
       </Grid>
 
       <div className={"design_section"}>
-        <Section
-          introLeft={true}
-          artwork={true}
-          headingPresent={false}
-          noteCalloutLeftOne={
-            <NoteCalloutLeft top={true} icon={<RiPenNibFill />} />
-          }
-          noteCalloutLeftTwo={
-            <NoteCalloutLeft top={false} icon={<GiFairyWand />} />
-          }
-          principleOne={
-            <DesignPrinciple
-              toolIcon={
-                <RiPenNibFill
-                  size={"1.4em"}
-                  style={{ transform: "rotate(-225deg)" }}
-                />
-              }
-              principleHeading={"Emphasis"}
-              principleIntro={"Clear, concise and essential information."}
-            />
-          }
-          principleTwo={
-            <DesignPrinciple
-              toolIcon={<GiFairyWand size={"1.4em"} />}
-              principleHeading={"Balance & Alignment"}
-              principleIntro={
-                "Symmetrical, Asymetrical ? we got you. color, texture ? count on us."
-              }
-            />
-          }
-          principleThree={
-            <DesignPrinciple
-              toolIcon={
-                <GiEyedropper
-                  size={"1.4em"}
-                  style={{ transform: "rotate(15deg)" }}
-                />
-              }
-              principleHeading={"Contrast"}
-              principleIntro={"Clearly, our designs “pop”."}
-            />
-          }
-          principleFour={
-            <DesignPrinciple
-              toolIcon={
-                <GiMagnifyingGlass
-                  size={"1.4em"}
-                  style={{ transform: "rotate(-80deg)" }}
-                />
-              }
-              principleHeading={"Movement"}
-              principleIntro={
-                "Our designs ensure every layer creates a story and narrative with the next."
-              }
-            />
-          }
-        />
+        <SectionPrinciples />
       </div>
 
       <div className={"design_section"}>

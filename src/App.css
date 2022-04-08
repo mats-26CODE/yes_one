@@ -26,15 +26,43 @@
 }
 
 .contact {
-  width: 80%;
-  margin: 1rem auto;
+  width: 100%;
+  min-height: 400px;
+  padding: 2rem 0 2rem 0;
 }
 
-.contact h4 {
-  font-size: 1.4rem;
-  color: #F5A623;
+.contact__box {
+  display: grid;
+  place-items: center;
+  margin-bottom: 4rem;
+}
+
+.contact__screen_box {
+  display: flex;
+  align-items: center;
+}
+
+.screenIcon {
+  font-size: 6rem;
+  color: #3f3f3f;
+}
+
+.screenIcon2 {
+  font-size: 12rem;
+  color: #3f3f3f;
+}
+
+.screenIcon3 {
+  font-size: 18rem;
+  color: #3f3f3f;
+}
+
+.contact__box h4 {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #1c1c1c;
   text-align: center;
-  margin: 0.85rem 1rem 1rem 0;
+  max-width: 40%;
 }
 
 .contact button {

@@ -172,13 +172,7 @@ const Home = () => {
         </Grid>
       </div>
 
-      <div
-        style={{
-          backgroundImage: `url(${bgOne})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div>
         <SectionOne
           noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
           artClassName={"section_art_box"}
@@ -188,9 +182,6 @@ const Home = () => {
               ? `${sectionOneImage.sectionOneImage}`
               : `${appDesign}`
           }
-          bgSize={"cover"}
-          bgRepeat={"no-repeat"}
-          bgPosition={"center"}
           heading={
             sectionOneHeader
               ? `${sectionOneHeader.sectionOneHeader}`
@@ -225,9 +216,6 @@ const Home = () => {
               ? `${sectionTwoImage.sectionTwoImage}`
               : `${codeSnippet}`
           }
-          bgSize={"cover"}
-          bgRepeat={"no-repeat"}
-          bgPosition={"center"}
           heading={
             sectionTwoHeader ? `${sectionTwoHeader.sectionTwoHeader}` : "Design"
           }

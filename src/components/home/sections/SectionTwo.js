@@ -27,14 +27,7 @@ const SectionTwo = ({
         </Grid>
 
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          <div
-            className={"section_two_art_box"}
-            style={{
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: `${bgSize}`,
-              backgroundRepeat: `${bgRepeat}`,
-            }}
-          >
+          <div className={"section_two_art_box"}>
             <div className={"note_left"}>{noteCalloutLeft}</div>
             {artworkImage ? (
               <div>

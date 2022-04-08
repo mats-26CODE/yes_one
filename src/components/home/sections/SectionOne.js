@@ -18,25 +18,10 @@ const SectionOne = ({
   bgPosition,
 }) => {
   return (
-    <div
-      className={"section_box"}
-      style={{
-        backgroundImage: `url(${bgOne})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className={"section_box"}>
       <Grid container>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          <div
-            className={artClassName}
-            style={{
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: `${bgSize}`,
-              backgroundRepeat: `${bgRepeat}`,
-              backgroundPosition: `${bgPosition}`,
-            }}
-          >
+          <div className={artClassName}>
             {noteCalloutRight ? (
               <div className={"note_right"}>{noteCalloutRight}</div>
             ) : null}

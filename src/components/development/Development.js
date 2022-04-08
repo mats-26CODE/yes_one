@@ -10,7 +10,7 @@ import NoteCalloutLeft from "../usual/NoteCalloutLeft";
 import NoteCalloutRight from "../usual/NoteCalloutRight";
 import CircleArt from "../usual/CircleArt";
 import CircleArtLeft from "../usual/CircleArtLeft";
-import Button from "../usual/Button";
+import appDesign from "../../assets/images/appdesign.jpg";
 import {
   selectDevHeader,
   selectDevIntro,
@@ -30,6 +30,10 @@ import {
   selectDevSectionFourIntro,
   selectDevSectionFourImage,
 } from "../../features/home/developmentSlice";
+import SectionTwo from "./sections/SectionTwo";
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import SectionThree from "./sections/SectionThree";
+import GetInTouch from "../usual/GetInTouch";
 
 const Development = () => {
   //-> development page details from redux store
@@ -60,21 +64,35 @@ const Development = () => {
     if (devSectionOneHeader && devSectionOneIntro && devSectionOneImage) {
       return (
         <Section
-          introLeft={true}
+          introLeft={false}
           artwork={true}
           artworkImage={`${devSectionOneImage.devSectionOneImage}`}
           artworkSize={"cover"}
           artworkRepeat={"no-repeat"}
-          artworkPosition={'center'}
+          artworkPosition={"center"}
           headingPresent={true}
           heading={`${devSectionOneHeader.devSectionOneHeader}`}
           intro={`${devSectionOneIntro.devSectionOneIntro}`}
-          noteCalloutRightOne={
-            <NoteCalloutRight top={true} slash={" < / > "} />
+          noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
+          noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
+        />
+      );
+    } else {
+      return (
+        <Section
+          introLeft={false}
+          artwork={true}
+          artworkImage={`${appDesign}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={"center"}
+          headingPresent={true}
+          heading={"Our Approach"}
+          intro={
+            "The mobile device you choose is a personal choice - we honour that by building mobile apps natively, and stick to that familiar, personal experience."
           }
-          noteCalloutRightTwo={
-            <NoteCalloutRight top={false} slash={" < / > "} />
-          }
+          noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
+          noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
         />
       );
     }
@@ -85,21 +103,35 @@ const Development = () => {
     if (devSectionTwoHeader && devSectionTwoIntro && devSectionTwoImage) {
       return (
         <Section
-          introLeft={false}
+          introLeft={true}
           artwork={true}
           artworkImage={`${devSectionTwoImage.devSectionTwoImage}`}
           artworkSize={"cover"}
           artworkRepeat={"no-repeat"}
-          artworkPosition={'center'}
+          artworkPosition={"center"}
           headingPresent={true}
           heading={`${devSectionTwoHeader.devSectionTwoHeader}`}
           intro={`${devSectionTwoIntro.devSectionTwoIntro}`}
-          noteCalloutRightOne={
-            <NoteCalloutRight top={true} slash={" < / > "} />
+          noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
+          noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
+        />
+      );
+    } else {
+      return (
+        <Section
+          introLeft={true}
+          artwork={true}
+          artworkImage={`${appDesign}`}
+          artworkSize={"cover"}
+          artworkRepeat={"no-repeat"}
+          artworkPosition={"center"}
+          headingPresent={true}
+          heading={"Our Approach"}
+          intro={
+            "The mobile device you choose is a personal choice - we honour that by building mobile apps natively, and stick to that familiar, personal experience."
           }
-          noteCalloutRightTwo={
-            <NoteCalloutRight top={false} slash={" < / > "} />
-          }
+          noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
+          noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
         />
       );
     }
@@ -109,22 +141,22 @@ const Development = () => {
   const renderSectionThree = () => {
     if (devSectionThreeHeader && devSectionThreeIntro && devSectionThreeImage) {
       return (
-        <Section
-          introLeft={true}
-          artwork={true}
-          artworkImage={`${devSectionThreeImage.devSectionThreeImage}`}
-          artworkSize={"cover"}
-          artworkRepeat={"no-repeat"}
-          artworkPosition={'center'}
-          headingPresent={true}
+        <SectionTwo
           heading={`${devSectionThreeHeader.devSectionThreeHeader}`}
           intro={`${devSectionThreeIntro.devSectionThreeIntro}`}
-          noteCalloutRightOne={
-            <NoteCalloutRight top={true} slash={" < / > "} />
+          productImage={`${devSectionThreeImage.devSectionThreeImage}`}
+          traits={renderMobileTraits()}
+        />
+      );
+    } else {
+      return (
+        <SectionTwo
+          heading={"Mobile Apps"}
+          intro={
+            "From planning, analysis, design, implementation, testing & integration to maintenance, We engineer operable, transitional and maintanable solutions. Our team of developers work hand in hand to make sure the product at handhas the best code, functional features and the best user experience."
           }
-          noteCalloutRightTwo={
-            <NoteCalloutRight top={false} slash={" < / > "} />
-          }
+          productImage={appDesign}
+          traits={renderMobileTraits()}
         />
       );
     }
@@ -134,25 +166,42 @@ const Development = () => {
   const renderSectionFour = () => {
     if (devSectionFourHeader && devSectionFourIntro && devSectionFourImage) {
       return (
-        <Section
-          introLeft={false}
-          artwork={true}
-          artworkImage={`${devSectionFourImage.devSectionFourImage}`}
-          artworkSize={"cover"}
-          artworkRepeat={"no-repeat"}
-          artworkPosition={'center'}
-          headingPresent={true}
+        <SectionTwo
           heading={`${devSectionFourHeader.devSectionFourHeader}`}
           intro={`${devSectionFourIntro.devSectionFourIntro}`}
-          noteCalloutRightOne={
-            <NoteCalloutRight top={true} slash={" < / > "} />
+          productImage={`${devSectionFourImage.devSectionFourImage}`}
+          traits={renderMobileTraits()}
+        />
+      );
+    } else {
+      return (
+        <SectionTwo
+          heading={"Web Apps"}
+          intro={
+            "From planning, analysis, design, implementation, testing & integration to maintenance, We engineer operable, transitional and maintanable solutions. Our team of developers work hand in hand to make sure the product at handhas the best code, functional features and the best user experience."
           }
-          noteCalloutRightTwo={
-            <NoteCalloutRight top={false} slash={" < / > "} />
-          }
+          productImage={appDesign}
+          traits={renderMobileTraits()}
         />
       );
     }
+  };
+
+  //-> get mobile traits
+  const renderMobileTraits = () => {
+    return (
+      <div>
+        <h5>Apps we develop</h5>
+        <div className="dev_trait_box">
+          <IoChevronForwardCircleOutline className="traitIcon" />
+          <p>Android Applications (Native) </p>
+        </div>
+        <div className="dev_trait_box">
+          <IoChevronForwardCircleOutline className="traitIcon" />
+          <p>iOS Applications (Native)</p>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -179,7 +228,7 @@ const Development = () => {
                 From planning, analysis, design, implementation, testing &
                 integration to maintenance, We engineer operable, transitional
                 and maintanable solutions. Our team of developers work hand in
-                hand to make sure the product at handhas the best code,
+                hand to make sure the product at hand has the best code,
                 functional features and the best user experience.
               </h5>
             )}
@@ -197,7 +246,17 @@ const Development = () => {
                 backgroundPosition: "center",
               }}
             ></div>
-          ) : null}
+          ) : (
+            <div
+              className={"dev_art_box"}
+              style={{
+                backgroundImage: `url(${appDesign})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+            ></div>
+          )}
 
           {devQuote && devQuotee ? (
             <div className={"dev__quote_box"}>
@@ -206,41 +265,31 @@ const Development = () => {
                 <h4>{devQuotee.devQuotee}</h4>
               </div>
             </div>
-          ) : null}
+          ) : (
+            <div className={"dev__quote_box"}>
+              <div>
+                <p>
+                  "The best solutions require a great deal of problem
+                  identification."
+                </p>
+                <h4>By Anonymous</h4>
+              </div>
+            </div>
+          )}
         </Grid>
       </Grid>
 
       <div className={"development_section"}>{renderSectionOne()}</div>
-
       <div className={"development_section"}>{renderSectionTwo()}</div>
 
-      <div className={"development_test_support"}>
-        {/* <div className={"dev_curve"}>
-          <Grid container>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <div className={"dev_art_box_curve"}></div>
-            </Grid>
-          </Grid>
-        </div> */}
-        <div className={"development_section"}>{renderSectionThree()}</div>
-
-        <div className={"development_section"}>{renderSectionFour()}</div>
-
-        <div className={"development_section"}>
-          <div className={"contact"}>
-            <Grid container>
-              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <div>
-                  <h4>Want a custom software and or a design ? </h4>
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <div>
-                  <Button text={"Get in touch"} />
-                </div>
-              </Grid>
-            </Grid>
-          </div>
+      <div className={"development_products"}>
+        <div className={"dev_product"}>{renderSectionThree()}</div>
+        <div className={"dev_product"}>{renderSectionFour()}</div>
+        <div className={"dev_product"}>
+          <SectionThree />
+        </div>
+        <div>
+          <GetInTouch />
         </div>
       </div>
     </div>
