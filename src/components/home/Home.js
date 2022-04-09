@@ -32,7 +32,7 @@ import {
   selectSectionThreeHeader,
   selectSectionThreeIntro,
   selectSectionThreeImage,
-} from "../../features/home/homeSlice";
+} from "../../features/homeSlice";
 
 const Home = () => {
   useEffect(() => {
@@ -52,7 +52,7 @@ const Home = () => {
   const sectionThreeImage = useSelector(selectSectionThreeImage);
 
   const productsData = () => {
-    if (homeProducts !== null) {
+    if (!_.isEmpty(homeProducts)) {
       const productsData = homeProducts.products;
       const products = _.map(productsData, (product) => product);
       return (
@@ -70,7 +70,16 @@ const Home = () => {
         </div>
       );
     } else {
-      return <p style={{ color: "white" }}>No data!</p>;
+      return (
+        <div className={"home_apps"}>
+          <h5>
+            Mobile Apps{" "}
+            <span>
+              <FaFan className={"fanIcon"} />
+            </span>
+          </h5>
+        </div>
+      );
     }
   };
 

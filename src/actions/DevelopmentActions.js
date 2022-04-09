@@ -7,22 +7,19 @@ import {
   updateQuote,
   updateQuotee,
   updateQuoteImage,
-  updateSectionFour,
   updateSectionFourHeader,
   updateSectionFourImage,
   updateSectionFourIntro,
   updateSectionOneHeader,
   updateSectionOneImage,
   updateSectionOneIntro,
-  updateSectionThree,
   updateSectionThreeHeader,
   updateSectionThreeImage,
   updateSectionThreeIntro,
-  updateSectionTwo,
   updateSectionTwoHeader,
   updateSectionTwoImage,
   updateSectionTwoIntro,
-} from "../features/home/developmentSlice";
+} from "../features/developmentSlice";
 
 const DevelopmentActions = () => {
   //-> redux dispatch
@@ -47,7 +44,6 @@ const DevelopmentActions = () => {
                     devHeader: data.devHeader,
                   })
                 );
-                console.log("dev header data", data);
               }
             },
             function (error) {
@@ -75,7 +71,6 @@ const DevelopmentActions = () => {
                     devIntro: data.devIntro,
                   })
                 );
-                console.log("dev intro data", data);
               }
             },
             function (error) {
@@ -103,7 +98,6 @@ const DevelopmentActions = () => {
                     devQuote: data.devQuote,
                   })
                 );
-                console.log("dev quote data", data);
               }
             },
             function (error) {
@@ -131,7 +125,6 @@ const DevelopmentActions = () => {
                     devQuoteImage: data.devQuoteImage,
                   })
                 );
-                console.log("dev quote bg data", data);
               }
             },
             function (error) {
@@ -159,7 +152,6 @@ const DevelopmentActions = () => {
                     devQuotee: data.devQuotee,
                   })
                 );
-                console.log("dev quotee data", data);
               }
             },
             function (error) {
@@ -185,7 +177,6 @@ const DevelopmentActions = () => {
                   devSectionOneHeader: data.sectionOneHeader,
                 })
               );
-              console.log("section one data", data);
             }
           });
       } catch (error) {
@@ -207,7 +198,6 @@ const DevelopmentActions = () => {
                   devSectionOneIntro: data.sectionOneIntro,
                 })
               );
-              console.log("section one intro data", data);
             }
           });
       } catch (error) {
@@ -229,7 +219,6 @@ const DevelopmentActions = () => {
                   devSectionOneImage: data.sectionOneImage,
                 })
               );
-              console.log("section one image data", data);
             }
           });
       } catch (error) {
@@ -251,7 +240,6 @@ const DevelopmentActions = () => {
                   devSectionTwoHeader: data.sectionTwoHeader,
                 })
               );
-              console.log("section two header data", data);
             }
           });
       } catch (error) {
@@ -273,7 +261,6 @@ const DevelopmentActions = () => {
                   devSectionTwoIntro: data.sectionTwoIntro,
                 })
               );
-              console.log("section two intro data", data);
             }
           });
       } catch (error) {
@@ -295,7 +282,6 @@ const DevelopmentActions = () => {
                   devSectionTwoImage: data.sectionTwoImage,
                 })
               );
-              console.log("section two image data", data);
             }
           });
       } catch (error) {
@@ -317,7 +303,6 @@ const DevelopmentActions = () => {
                   devSectionThreeHeader: data.sectionThreeHeader,
                 })
               );
-              console.log("section three header data", data);
             }
           });
       } catch (error) {
@@ -339,7 +324,6 @@ const DevelopmentActions = () => {
                   devSectionThreeIntro: data.sectionThreeIntro,
                 })
               );
-              console.log("section three intro data", data);
             }
           });
       } catch (error) {
@@ -361,7 +345,6 @@ const DevelopmentActions = () => {
                   devSectionThreeImage: data.sectionThreeImage,
                 })
               );
-              console.log("section two image data", data);
             }
           });
       } catch (error) {
@@ -383,7 +366,6 @@ const DevelopmentActions = () => {
                   devSectionFourHeader: data.sectionFourHeader,
                 })
               );
-              console.log("section four header data", data);
             }
           });
       } catch (error) {
@@ -405,7 +387,6 @@ const DevelopmentActions = () => {
                   devSectionFourIntro: data.sectionFourIntro,
                 })
               );
-              console.log("section four intro data", data);
             }
           });
       } catch (error) {
@@ -427,7 +408,6 @@ const DevelopmentActions = () => {
                   devSectionFourImage: data.sectionFourImage,
                 })
               );
-              console.log("section four image data", data);
             }
           });
       } catch (error) {

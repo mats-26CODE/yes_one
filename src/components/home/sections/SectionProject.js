@@ -9,7 +9,7 @@ import "swiper/modules/pagination/pagination.min.css";
 import "swiper/modules/navigation/navigation.min.css";
 
 //-> redux data selector
-import { selectComboProjects } from "../../../features/home/homeSlice";
+import { selectComboProjects } from "../../../features/homeSlice";
 import { useSelector } from "react-redux";
 
 //-> icon imports

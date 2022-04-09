@@ -4,7 +4,6 @@ import { isBrowser, isMobile } from "react-device-detect";
 import "./css/Careers.css";
 
 //-> react icons imports
-import { BiNotepad } from "react-icons/bi";
 import { ImPencil } from "react-icons/im";
 import { BsPen } from "react-icons/bs";
 import { GiSunglasses, GiSecretBook, GiLightBackpack } from "react-icons/gi";

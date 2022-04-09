@@ -25,7 +25,6 @@ export const homeSlice = createSlice({
     },
     products(state, action) {
       state.homeProducts = action.payload;
-      // console.log(state.homeProducts);
     },
     secOneHeader(state, action) {
       state.sectionOneHeader = action.payload;
@@ -56,7 +55,6 @@ export const homeSlice = createSlice({
     },
     comboProjects(state, action) {
       state.homeComboProjects = action.payload;
-      // console.log(state.homeComboProjects);
     },
   },
 });

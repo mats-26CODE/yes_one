@@ -27,7 +27,7 @@ import {
   selectDevSectionFourHeader,
   selectDevSectionFourIntro,
   selectDevSectionFourImage,
-} from "../../features/home/developmentSlice";
+} from "../../features/developmentSlice";
 import SectionTwo from "./sections/SectionTwo";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
 import SectionThree from "./sections/SectionThree";

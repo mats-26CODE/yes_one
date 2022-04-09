@@ -1,4 +1,5 @@
 import React from "react";
+import DesignActions from "./actions/DesignActions";
 import DevelopmentActions from "./actions/DevelopmentActions";
 import HomeActions from "./actions/HomeActions";
 import "./App.css";
@@ -12,6 +13,7 @@ function App() {
       <>
         <HomeActions />
         <DevelopmentActions />
+        <DesignActions />
       </>
     );
   };

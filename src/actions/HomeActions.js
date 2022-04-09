@@ -14,7 +14,7 @@ import {
   secThreeIntro,
   secThreeImage,
   comboProjects,
-} from "../features/home/homeSlice";
+} from "../features/homeSlice";
 
 const HomeActions = () => {
   //-> redux dispatch
@@ -39,11 +39,9 @@ const HomeActions = () => {
                     header: data.homeHeader,
                   })
                 );
-                console.log("data", data);
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -68,7 +66,6 @@ const HomeActions = () => {
                 products: data,
               })
             );
-            console.log("data products", data);
           });
       } catch (err) {
         console.error(err);
@@ -98,7 +95,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -125,7 +121,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -152,7 +147,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -181,7 +175,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -208,7 +201,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -235,7 +227,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -264,7 +255,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -291,7 +281,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -318,7 +307,6 @@ const HomeActions = () => {
               }
             },
             function (error) {
-              console.log("Getting trouble fetching data");
               console.log(error);
             }
           );
@@ -354,7 +342,6 @@ const HomeActions = () => {
                 comboProjects: data,
               })
             );
-            console.log("data projects", data);
           });
       } catch (err) {
         console.error(err);
