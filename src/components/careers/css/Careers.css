@@ -40,7 +40,7 @@
     overflow: hidden;
 }
 
-.careers_art_box > div > * {
+.careers_art_box>div>* {
     margin: 0 0.5rem 0 0.5rem;
 }
 
@@ -55,9 +55,12 @@
 }
 
 .career_post_info {
+    min-height: 140px;
     background-color: #323232;
     border-radius: 1.2rem;
     padding: 1rem;
+    display: grid;
+    place-items: center;
 }
 
 .career_post_info h4 {
@@ -101,6 +104,13 @@
     font-size: 2.3rem;
     color: #ffffff;
     line-height: 1.6;
+}
+
+.career__love_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 0 2rem 0;
 }
 
 .career_outro h5 {

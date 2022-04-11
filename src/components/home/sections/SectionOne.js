@@ -1,9 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 
-//-> file imports
-import bgOne from "../../../assets/backgrounds/bgOne.svg";
-
 const SectionOne = ({
   noteCalloutRight,
   team,

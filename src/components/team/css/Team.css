@@ -1,7 +1,6 @@
 .team_container {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 2rem;
 }
 
 .team_header_box,
@@ -30,6 +29,11 @@
     text-align: center;
 }
 
+.team_brain_box {
+    display: grid;
+    place-items: center;
+}
+
 .team_brain {
     width: 220px;
     height: 220px;
@@ -38,6 +42,18 @@
     margin: 0 auto;
     display: grid;
     place-items: center;
+}
+
+/* Warped Text Showing Team Member Name */
+path {
+    fill: transparent;
+}
+
+.textpath {
+    font-family: "Lobster", "FreeStyleScript", sans-serif;
+    width: 600;
+    fill: #F5A623;
+    font-size: 2.6rem;
 }
 
 .team_title h4 {
@@ -80,7 +96,7 @@
 .client_section {
     width: 80%;
     margin: 2rem auto;
-    background-color: #323232;
+    background-color: #1c1c1c;
     border-radius: 2rem;
     padding: 2rem;
 }
@@ -93,19 +109,33 @@
 }
 
 .client_box {
+    min-height: 130px;
     margin: 1rem;
-    background-color: #828282;
+    background-color: #3F3F3F;
     border-radius: 3rem;
     padding: 2.5rem;
     display: grid;
     place-items: center;
-    /* height: 20vh; */
+}
+
+.client_box img {
+    width: 40%;
+    object-fit: contain;
+}
+
+.client_box p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #F5A623;
+    margin-top: 0.3rem;
 }
 
 .client_care_box p {
     font-size: 1.2rem;
     text-align: center;
     line-height: 1.6;
-    color: #F5A623;
-    margin-top: 1rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-top: 2rem;
 }

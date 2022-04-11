@@ -1,30 +1,25 @@
-import React from 'react';
+import React from "react";
+import _ from "lodash";
+import { Grid } from "@material-ui/core";
 
-//->react icons imports
-import { HiOutlineExternalLink} from 'react-icons/hi';
+//->component imports
+import CareerPostCard from "./cards/CareerPostCard";
 
-
-const CareerPost = ({
-    careerPostTitle,
-    careerPostSkill,
-    careerPostClick
-}) => {
-    return (
-        <div className={'career_post_container'}>
-            {
-                <div className={'career_post_box'}>
-                    <div className={'career_post_info'}>
-                        <h4>{careerPostTitle}</h4>
-                        <h5>{careerPostSkill}</h5>
-                        <p>{careerPostClick}</p>
-                    </div>
-                    <div className={'career_post_arrow'}>
-                        <HiOutlineExternalLink size={'2em'} color={'#F5A623'} className={'career_link'} />
-                    </div>
-                </div>
-            }
-        </div>
-    )
-}
+const CareerPost = ({ jobPosts }) => {
+  const renderJobPosts = () => {
+    if (!_.isEmpty(jobPosts)) {
+      const jobPostsData = jobPosts.careerJobs;
+      const _jobs = _.map(jobPostsData, (job) => job);
+      return (
+        <Grid container>
+          {_jobs.map((job, index) => {
+            return <CareerPostCard job={job} key={index} />;
+          })}
+        </Grid>
+      );
+    }
+  };
+  return <div>{renderJobPosts()}</div>;
+};
 
 export default CareerPost;

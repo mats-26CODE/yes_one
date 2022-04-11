@@ -2,97 +2,76 @@ import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./css/Team.css";
-
-//-> react icons imports
-import { RiAmazonFill, RiAppleFill, RiBehanceFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 //-> component imports
 import MemberSection from "./sections/MemberSection";
 import ClientSection from "./sections/ClientSection";
 import GetInTouch from "../usual/GetInTouch";
+import {
+  selectClients,
+  selectClientTreat,
+  selectTeamHeader,
+  selectTeamBrains,
+  selectTeamIntro,
+  selectTeamTraits,
+} from "../../features/teamSlice";
 
 const Team = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  //-> team page details / data from redux
+  const teamHeader = useSelector(selectTeamHeader);
+  const teamIntro = useSelector(selectTeamIntro);
+  const teamBrains = useSelector(selectTeamBrains);
+  const teamTraits = useSelector(selectTeamTraits);
+  const clients = useSelector(selectClients);
+  const clientTreat = useSelector(selectClientTreat);
+
   return (
     <div className={"team_container"}>
       <Grid container>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <div className={"team_header_box"}>
-            <h4>
-              Meet our team <span id={"slash"}>/</span>
-            </h4>
+            {teamHeader ? (
+              <h4>
+                {teamHeader.teamHeader} <span id={"slash"}>/</span>
+              </h4>
+            ) : (
+              <h4>
+                Meet our team <span id={"slash"}>/</span>
+              </h4>
+            )}
           </div>
 
           <div className={"team_intro"}>
-            <h5>
-              Before you go down and check on the brains behind our company,
-              know that there’s always
-              <span id={"team_to_career_link"}>
-                <Link to={"/careers"}> room</Link>
-              </span>{" "}
-              for more, the door’s open for those who are confident in their
-              skills.
-            </h5>
+            {teamIntro ? (
+              <h5>
+                {teamIntro.teamIntro}{" "}
+                <span id={"team_to_career_link"}>
+                  <Link to={"/careers"}>room</Link>
+                </span>{" "}
+                for you
+              </h5>
+            ) : (
+              <h5>
+                Before you go down and check on the brains behind our company,
+                know that there’s always
+                <span id={"team_to_career_link"}>
+                  <Link to={"/careers"}> room</Link>
+                </span>{" "}
+                for more, the door’s open for those who are confident in their
+                skills.
+              </h5>
+            )}
           </div>
         </Grid>
-        s
       </Grid>
 
       <div className={"team_section"}>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <MemberSection
-              brainImage={"dp goes here"}
-              brainTitle={"The C.E.O"}
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <div className={"team_traits_box"}>
-              <div>
-                <h4>Innovative,</h4>
-                <h4>Hard Working,</h4>
-                <h4>Motivated,</h4>
-                <h4>Smiling,</h4>
-                <h1>
-                  <span role="img" aria-label="sunglasses emoji">
-                    🤪
-                  </span>
-                </h1>
-                <p>faces</p>
-              </div>
-            </div>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <MemberSection
-              brainImage={"dp goes here"}
-              brainTitle={"Developer"}
-            />
-          </Grid>
-        </Grid>
-      </div>
-
-      <div className={"team_section"}>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <MemberSection
-              brainImage={"dp goes here"}
-              brainTitle={"Developer"}
-            />
-          </Grid>
-        </Grid>
-      </div>
-
-      <div className={"team_section"}>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <MemberSection
-              brainImage={"dp goes here"}
-              brainTitle={"Creative Designer"}
-            />
-          </Grid>
-        </Grid>
+        <MemberSection brains={teamBrains} traits={teamTraits} />
       </div>
 
       <div className={"client_section"}>
@@ -105,31 +84,23 @@ const Team = () => {
             </div>
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
-            <ClientSection
-              icon={<RiAmazonFill size={"6.5em"} color={"#ffffff"} />}
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
-            <ClientSection
-              icon={<RiBehanceFill size={"6.5em"} color={"#ffffff"} />}
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
-            <ClientSection
-              icon={<RiAppleFill size={"6.5em"} color={"#ffffff"} />}
-            />
-          </Grid>
-        </Grid>
+
+        <div>
+          <ClientSection clientData={clients} />
+        </div>
+
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={"client_care_box"}>
-              <p>
-                We care about our work, our clients and our people. We treat
-                everyone with honesty and respect and expect to be treated in
-                the same way.
-              </p>
+              {clientTreat ? (
+                <p>{clientTreat.clientTreat}</p>
+              ) : (
+                <p>
+                  We care about our work, our clients and our people. We treat
+                  everyone with honesty and respect and expect to be treated in
+                  the same way.
+                </p>
+              )}
             </div>
           </Grid>
         </Grid>

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import "./css/Development.css";
 import { useSelector } from "react-redux";
-import _ from "lodash";
 
 //-> component imports
 import Section from "./sections/Section";

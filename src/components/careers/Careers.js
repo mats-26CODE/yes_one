@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
-import { isBrowser, isMobile } from "react-device-detect";
+import { isBrowser } from "react-device-detect";
 import "./css/Careers.css";
+import { useSelector } from "react-redux";
 
 //-> react icons imports
 import { ImPencil } from "react-icons/im";
@@ -11,33 +12,64 @@ import { IoIosLaptop, IoIosPeople } from "react-icons/io";
 import { FaRegHandshake, FaRegKeyboard } from "react-icons/fa";
 import { SiCoffeescript } from "react-icons/si";
 import { CgMouse } from "react-icons/cg";
-import { IoCheckboxOutline } from "react-icons/io5";
+import { IoCheckmarkDone } from "react-icons/io5";
 
 //-> component imports
 import CareerPost from "./sections/CareerPost";
+import {
+  selectCareerHeader,
+  selectCareerIntro,
+  selectCareerJobs,
+  selectCareerJoinHeader,
+  selectCareerLoveOne,
+  selectCareerLoveThree,
+  selectCareerLoveTwo,
+  selectCareerSpotHeader,
+} from "../../features/careerSlice";
 
 const Careers = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  //-> career page details / data from redux
+  const careerHeader = useSelector(selectCareerHeader);
+  const careerIntro = useSelector(selectCareerIntro);
+  const careerJobs = useSelector(selectCareerJobs);
+  const careerJoinHeader = useSelector(selectCareerJoinHeader);
+  const careerLoveOne = useSelector(selectCareerLoveOne);
+  const careerLoveTwo = useSelector(selectCareerLoveTwo);
+  const careerLoveThree = useSelector(selectCareerLoveThree);
+  const careerSpotHeader = useSelector(selectCareerSpotHeader);
+
   return (
     <div className={"careers_container"}>
       <Grid container>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <div className={"careers_header_box"}>
-            <h4>
-              Career Growth <span id={"slash"}>/</span>
-            </h4>
+            {careerHeader ? (
+              <h4>
+                {careerHeader.careerHeader} <span id={"slash"}>/</span>
+              </h4>
+            ) : (
+              <h4>
+                Career Growth <span id={"slash"}>/</span>
+              </h4>
+            )}
           </div>
 
           <div className={"careers_intro"}>
-            <h5>
-              Constantly growing and from us, we are constantly on alert looking
-              for pin-point talents who would like to grow with us. If you are
-              confident with your skills and have passion to work in our
-              innovative team, find the right position for you below and shoot
-              your shot.
-            </h5>
+            {careerIntro ? (
+              <h5>{careerIntro.careerIntro}</h5>
+            ) : (
+              <h5>
+                Constantly growing and from us, we are constantly on alert
+                looking for pin-point talents who would like to grow with us. If
+                you are confident with your skills and have passion to work in
+                our innovative team, find the right position for you below and
+                shoot your shot.
+              </h5>
+            )}
           </div>
         </Grid>
       </Grid>
@@ -79,60 +111,63 @@ const Careers = () => {
       </div>
 
       <div className={"careers_section"}>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-            <CareerPost
-              careerPostTitle={"Front-end Software Engineer - Full Time"}
-              careerPostSkill={"React.js, Angular.js, React Native"}
-              careerPostClick={
-                "Are you the right fit for the job ? Click the arrow to apply now"
-              }
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-            <CareerPost
-              careerPostTitle={"Back-end Software Engineer - Full Time"}
-              careerPostSkill={"React.js, Angular.js, React Native"}
-              careerPostClick={
-                "Are you the right fit for the job ? Click the arrow to apply now"
-              }
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-            <CareerPost
-              careerPostTitle={"Back-end Software Engineer - Full Time"}
-              careerPostSkill={"React.js, Angular.js, React Native"}
-              careerPostClick={
-                "Are you the right fit for the job ? Click the arrow to apply now"
-              }
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-            <CareerPost
-              careerPostTitle={"Creative Designer - Intern"}
-              careerPostSkill={"React.js, Angular.js, React Native"}
-              careerPostClick={
-                "Are you the right fit for the job ? Click the arrow to apply now"
-              }
-            />
-          </Grid>
-        </Grid>
+        <CareerPost jobPosts={careerJobs} />
       </div>
 
       <div className={"careers_section"}>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={"career_outro"}>
-              <h4>Join the team</h4>
+              {careerJoinHeader ? (
+                <h4>{careerJoinHeader.careerJoinHeader}</h4>
+              ) : (
+                <h4>Join the team</h4>
+              )}
+
               <IoIosPeople size={"10em"} color={"#323232"} />
-              <h5>
-                Love technology ?{" "}
-                <IoCheckboxOutline size={"1em"} color={"#F5A623"} /> Love to
-                create ? <IoCheckboxOutline size={"1em"} color={"#F5A623"} />{" "}
-                Love innovation ?{" "}
-                <IoCheckboxOutline size={"1em"} color={"#F5A623"} /> <br />
-                There is a spot for you at Yes Productions
-              </h5>
+              <div>
+                <div className="career__love_box">
+                  {careerLoveOne ? (
+                    <h5>
+                      {careerLoveOne.careerLoveOne}{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                    </h5>
+                  ) : (
+                    <h5>
+                      Love technology ?{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />{" "}
+                    </h5>
+                  )}
+                  {careerLoveTwo ? (
+                    <h5>
+                      {careerLoveTwo.careerLoveTwo}{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                    </h5>
+                  ) : (
+                    <h5>
+                      Love technology ?{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                    </h5>
+                  )}
+                  {careerLoveThree ? (
+                    <h5>
+                      {careerLoveThree.careerLoveThree}{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                    </h5>
+                  ) : (
+                    <h5>
+                      Love technology ?{" "}
+                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                    </h5>
+                  )}
+                </div>
+
+                {careerSpotHeader ? (
+                  <h5>{careerSpotHeader.careerSpotHeader}</h5>
+                ) : (
+                  <h5>There is a spot for you at Yes Productions</h5>
+                )}
+              </div>
             </div>
           </Grid>
         </Grid>

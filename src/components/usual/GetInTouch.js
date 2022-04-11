@@ -9,7 +9,7 @@ import {
   IoPhonePortraitOutline,
   IoTabletPortraitOutline,
 } from "react-icons/io5";
-import { GoDeviceDesktop } from "react-icons/go";
+import { IoIosDesktop } from "react-icons/io";
 
 const GetInTouch = () => {
   return (
@@ -20,7 +20,7 @@ const GetInTouch = () => {
             <div className="contact__screen_box">
               <IoPhonePortraitOutline className="screenIcon" />
               <IoTabletPortraitOutline className="screenIcon2" />
-              <GoDeviceDesktop className="screenIcon3" />
+              <IoIosDesktop className="screenIcon3" />
             </div>
           </div>
         </Grid>

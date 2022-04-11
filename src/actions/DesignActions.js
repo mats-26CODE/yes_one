@@ -15,7 +15,7 @@ const DesignActions = () => {
   //-> redux dispatch
   const dispatch = useDispatch();
 
-  //-> get development page data from the database
+  //-> get design page data from the database
   useEffect(() => {
     //-> Get the design header
     const getDesHeader = async () => {
@@ -108,7 +108,6 @@ const DesignActions = () => {
           .doc("designGeeks")
           .collection("cards")
           .onSnapshot((snapshot) => {
-            // setProducts(snapshot.docs.map((doc) => doc.data()));
             const data = snapshot.docs.map((doc) => doc.data());
             dispatch(
               updateDesignPrinciples({

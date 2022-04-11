@@ -1,7 +1,9 @@
 import React from "react";
+import CareerActions from "./actions/CareerActions";
 import DesignActions from "./actions/DesignActions";
 import DevelopmentActions from "./actions/DevelopmentActions";
 import HomeActions from "./actions/HomeActions";
+import TeamActions from "./actions/TeamActions";
 import "./App.css";
 
 //-> component imports 🚀
@@ -14,6 +16,8 @@ function App() {
         <HomeActions />
         <DevelopmentActions />
         <DesignActions />
+        <TeamActions />
+        <CareerActions />
       </>
     );
   };
