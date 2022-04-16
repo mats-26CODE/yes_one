@@ -33,15 +33,12 @@
 .careers_art_box {
     display: grid;
     place-items: center;
-    width: 100%;
-    height: 30vh;
-    border-radius: 1rem;
-    background-color: rgba(50, 50, 50, 0.4);
-    overflow: hidden;
+    padding-bottom: 2rem;
 }
 
-.careers_art_box>div>* {
-    margin: 0 0.5rem 0 0.5rem;
+.careers_art_box img {
+    width: 100%;
+    object-fit: contain;
 }
 
 .career_post_container {

@@ -5,19 +5,14 @@ import "./css/Careers.css";
 import { useSelector } from "react-redux";
 
 //-> react icons imports
-import { ImPencil } from "react-icons/im";
-import { BsPen } from "react-icons/bs";
-import { GiSunglasses, GiSecretBook, GiLightBackpack } from "react-icons/gi";
-import { IoIosLaptop, IoIosPeople } from "react-icons/io";
-import { FaRegHandshake, FaRegKeyboard } from "react-icons/fa";
-import { SiCoffeescript } from "react-icons/si";
-import { CgMouse } from "react-icons/cg";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { IoIosPeople } from "react-icons/io";
 
 //-> component imports
 import CareerPost from "./sections/CareerPost";
 import {
   selectCareerHeader,
+  selectCareerImage,
   selectCareerIntro,
   selectCareerJobs,
   selectCareerJoinHeader,
@@ -26,6 +21,7 @@ import {
   selectCareerLoveTwo,
   selectCareerSpotHeader,
 } from "../../features/careerSlice";
+import designPop from "../../assets/images/designPop.jpg";
 
 const Careers = () => {
   useEffect(() => {
@@ -35,6 +31,7 @@ const Careers = () => {
   //-> career page details / data from redux
   const careerHeader = useSelector(selectCareerHeader);
   const careerIntro = useSelector(selectCareerIntro);
+  const careerImage = useSelector(selectCareerImage);
   const careerJobs = useSelector(selectCareerJobs);
   const careerJoinHeader = useSelector(selectCareerJoinHeader);
   const careerLoveOne = useSelector(selectCareerLoveOne);
@@ -74,38 +71,16 @@ const Careers = () => {
         </Grid>
       </Grid>
 
-      <div className={"careers_section"}>
+      <div>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            {isBrowser ? (
-              <div className={"careers_art_box"}>
-                <div>
-                  <GiSecretBook size={"1em"} color={"#ffffff"} />
-                  <ImPencil size={"4em"} color={"#ffffff"} />
-                  <BsPen size={"5.5em"} color={"#ffffff"} />
-                  <GiSunglasses size={"8.5em"} color={"#ffffff"} />
-                  <IoIosLaptop size={"10em"} color={"#ffffff"} />
-                  <FaRegKeyboard size={"8em"} color={"#ffffff"} />
-                  <CgMouse size={"6em"} color={"#ffffff"} />
-                  <GiLightBackpack size={"4em"} color={"#ffffff"} />
-                  <SiCoffeescript size={"2em"} color={"#ffffff"} />
-                  <FaRegHandshake size={"1em"} color={"#ffffff"} />
-                </div>
-              </div>
-            ) : (
-              <div className={"careers_art_box"}>
-                <div>
-                  <GiSecretBook size={"0.9em"} color={"#ffffff"} />
-                  <BsPen size={"1em"} color={"#ffffff"} />
-                  <GiSunglasses size={"2em"} color={"#ffffff"} />
-                  <IoIosLaptop size={"2.5em"} color={"#ffffff"} />
-                  <FaRegKeyboard size={"1.5em"} color={"#ffffff"} />
-                  <CgMouse size={"1em"} color={"#ffffff"} />
-                  {/* <GiLightBackpack size={'1em'} color={'#ffffff'}/> */}
-                  <SiCoffeescript size={"1em"} color={"#ffffff"} />
-                </div>
-              </div>
-            )}
+            <div className={"careers_art_box"}>
+              {careerImage ? (
+                <img src={careerImage.careerImage} alt="design artwork" />
+              ) : (
+                <img src={designPop} alt="design artwork" />
+              )}
+            </div>
           </Grid>
         </Grid>
       </div>

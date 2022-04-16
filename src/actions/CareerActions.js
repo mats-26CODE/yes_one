@@ -3,6 +3,7 @@ import db from "../firebase";
 import { useDispatch } from "react-redux";
 import {
   updateCareerHeader,
+  updateCareerImage,
   updateCareerIntro,
   updateCareerJobs,
   updateCareerJoinHeader,
@@ -60,6 +61,34 @@ const CareerActions = () => {
                 dispatch(
                   updateCareerIntro({
                     careerIntro: data.careerIntro,
+                  })
+                );
+              }
+            },
+            function (error) {
+              console.log(error);
+            }
+          );
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    //-> Get the career intro
+    const getCareerImage = async () => {
+      try {
+        db.collection("careers")
+          .doc("careerHeaderIntro")
+          .collection("illustration")
+          .doc("image")
+          .onSnapshot(
+            function (doc) {
+              //-> check if the doc is available
+              if (doc.exists) {
+                const data = doc.data();
+                dispatch(
+                  updateCareerImage({
+                    careerImage: data.careerImage,
                   })
                 );
               }
@@ -226,6 +255,7 @@ const CareerActions = () => {
 
     getCareerHeader();
     getCareerIntro();
+    getCareerImage();
     getCareerJobs();
     getCareerJoinHeader();
     getCareerLoveOne();

@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   careerHeader: "",
   careerIntro: "",
+  careerImage: "",
   careerJobs: {},
   careerJoinHeader: "",
   careerLoveOne: "",
@@ -20,6 +21,9 @@ const careerSlice = createSlice({
     },
     updateCareerIntro(state, action) {
       state.careerIntro = action.payload;
+    },
+    updateCareerImage(state, action) {
+      state.careerImage = action.payload;
     },
     updateCareerJobs(state, action) {
       state.careerJobs = action.payload;
@@ -45,6 +49,7 @@ const careerSlice = createSlice({
 export const {
   updateCareerHeader,
   updateCareerIntro,
+  updateCareerImage,
   updateCareerJobs,
   updateCareerJoinHeader,
   updateCareerLoveOne,
@@ -55,6 +60,7 @@ export const {
 
 export const selectCareerHeader = (state) => state.career.careerHeader;
 export const selectCareerIntro = (state) => state.career.careerIntro;
+export const selectCareerImage = (state) => state.career.careerImage;
 export const selectCareerJobs = (state) => state.career.careerJobs;
 export const selectCareerJoinHeader = (state) => state.career.careerJoinHeader;
 export const selectCareerLoveOne = (state) => state.career.careerLoveOne;

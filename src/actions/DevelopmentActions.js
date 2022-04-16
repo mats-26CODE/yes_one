@@ -10,15 +10,19 @@ import {
   updateSectionFourHeader,
   updateSectionFourImage,
   updateSectionFourIntro,
+  updateSectionFourTraits,
   updateSectionOneHeader,
   updateSectionOneImage,
   updateSectionOneIntro,
+  updateSectionOneTraits,
   updateSectionThreeHeader,
   updateSectionThreeImage,
   updateSectionThreeIntro,
+  updateSectionThreeTraits,
   updateSectionTwoHeader,
   updateSectionTwoImage,
   updateSectionTwoIntro,
+  updateSectionTwoTraits,
 } from "../features/developmentSlice";
 
 const DevelopmentActions = () => {
@@ -226,6 +230,27 @@ const DevelopmentActions = () => {
       }
     };
 
+    //-> Get section one traits
+    const getDevSectionOneTraits = async () => {
+      try {
+        db.collection("development")
+          .doc("devSections")
+          .collection("sectionOne")
+          .doc("traits")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              updateSectionOneTraits({
+                devSectionOneTraits: data,
+              })
+            );
+          });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     const getDevSectionTwoHeader = async () => {
       try {
         db.collection("development")
@@ -286,6 +311,27 @@ const DevelopmentActions = () => {
           });
       } catch (error) {
         console.error(error);
+      }
+    };
+
+    //-> Get section two traits
+    const getDevSectionTwoTraits = async () => {
+      try {
+        db.collection("development")
+          .doc("devSections")
+          .collection("sectionTwo")
+          .doc("traits")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              updateSectionTwoTraits({
+                devSectionTwoTraits: data,
+              })
+            );
+          });
+      } catch (err) {
+        console.error(err);
       }
     };
 
@@ -352,6 +398,27 @@ const DevelopmentActions = () => {
       }
     };
 
+    //-> Get section three traits
+    const getDevSectionThreeTraits = async () => {
+      try {
+        db.collection("development")
+          .doc("devSections")
+          .collection("sectionThree")
+          .doc("traits")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              updateSectionThreeTraits({
+                devSectionThreeTraits: data,
+              })
+            );
+          });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     const getDevSectionFourHeader = async () => {
       try {
         db.collection("development")
@@ -415,6 +482,27 @@ const DevelopmentActions = () => {
       }
     };
 
+    //-> Get section four traits
+    const getDevSectionFourTraits = async () => {
+      try {
+        db.collection("development")
+          .doc("devSections")
+          .collection("sectionFour")
+          .doc("traits")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              updateSectionFourTraits({
+                devSectionFourTraits: data,
+              })
+            );
+          });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     getDevHeader();
     getDevIntro();
     getDevQuote();
@@ -423,15 +511,19 @@ const DevelopmentActions = () => {
     getDevSectionOneHeader();
     getDevSectionOneIntro();
     getDevSectionOneImage();
+    getDevSectionOneTraits();
     getDevSectionTwoHeader();
     getDevSectionTwoIntro();
     getDevSectionTwoImage();
+    getDevSectionTwoTraits();
     getDevSectionThreeHeader();
     getDevSectionThreeIntro();
     getDevSectionThreImage();
+    getDevSectionThreeTraits();
     getDevSectionFourHeader();
     getDevSectionFourIntro();
     getDevSectionFourImage();
+    getDevSectionFourTraits();
   }, [dispatch]);
 
   return <></>;

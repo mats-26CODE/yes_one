@@ -26,11 +26,16 @@ import {
   selectDevSectionFourHeader,
   selectDevSectionFourIntro,
   selectDevSectionFourImage,
+  selectDevSectionOneTraits,
+  selectDevSectionTwoTraits,
+  selectDevSectionThreeTraits,
+  selectDevSectionFourTraits,
 } from "../../features/developmentSlice";
 import SectionTwo from "./sections/SectionTwo";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
 import SectionThree from "./sections/SectionThree";
 import GetInTouch from "../usual/GetInTouch";
+import Traits from "./subComponents/Traits";
 
 const Development = () => {
   useEffect(() => {
@@ -46,18 +51,22 @@ const Development = () => {
   const devSectionOneHeader = useSelector(selectDevSectionOneHeader);
   const devSectionOneIntro = useSelector(selectDevSectionOneIntro);
   const devSectionOneImage = useSelector(selectDevSectionOneImage);
+  const devSectionOneTraits = useSelector(selectDevSectionOneTraits);
 
   const devSectionTwoHeader = useSelector(selectDevSectionTwoHeader);
   const devSectionTwoIntro = useSelector(selectDevSectionTwoIntro);
   const devSectionTwoImage = useSelector(selectDevSectionTwoImage);
+  const devSectionTwoTraits = useSelector(selectDevSectionTwoTraits);
 
   const devSectionThreeHeader = useSelector(selectDevSectionThreeHeader);
   const devSectionThreeIntro = useSelector(selectDevSectionThreeIntro);
   const devSectionThreeImage = useSelector(selectDevSectionThreeImage);
+  const devSectionThreeTraits = useSelector(selectDevSectionThreeTraits);
 
   const devSectionFourHeader = useSelector(selectDevSectionFourHeader);
   const devSectionFourIntro = useSelector(selectDevSectionFourIntro);
   const devSectionFourImage = useSelector(selectDevSectionFourImage);
+  const devSectionFourTraits = useSelector(selectDevSectionFourTraits);
 
   //-> render sections data
   const renderSectionOne = () => {
@@ -67,6 +76,7 @@ const Development = () => {
           introLeft={false}
           artwork={true}
           artworkImage={`${devSectionOneImage.devSectionOneImage}`}
+          traits={renderSectionOneTraits()}
           artworkSize={"cover"}
           artworkRepeat={"no-repeat"}
           artworkPosition={"center"}
@@ -106,6 +116,7 @@ const Development = () => {
           introLeft={true}
           artwork={true}
           artworkImage={`${devSectionTwoImage.devSectionTwoImage}`}
+          traits={renderSectionTwoTraits()}
           artworkSize={"cover"}
           artworkRepeat={"no-repeat"}
           artworkPosition={"center"}
@@ -145,7 +156,7 @@ const Development = () => {
           heading={`${devSectionThreeHeader.devSectionThreeHeader}`}
           intro={`${devSectionThreeIntro.devSectionThreeIntro}`}
           productImage={`${devSectionThreeImage.devSectionThreeImage}`}
-          traits={renderMobileTraits()}
+          traits={renderSectionThreeTraits()}
         />
       );
     } else {
@@ -156,7 +167,6 @@ const Development = () => {
             "From planning, analysis, design, implementation, testing & integration to maintenance, We engineer operable, transitional and maintanable solutions. Our team of developers work hand in hand to make sure the product at handhas the best code, functional features and the best user experience."
           }
           productImage={appDesign}
-          traits={renderMobileTraits()}
         />
       );
     }
@@ -170,7 +180,7 @@ const Development = () => {
           heading={`${devSectionFourHeader.devSectionFourHeader}`}
           intro={`${devSectionFourIntro.devSectionFourIntro}`}
           productImage={`${devSectionFourImage.devSectionFourImage}`}
-          traits={renderMobileTraits()}
+          traits={renderSectionFourTraits()}
         />
       );
     } else {
@@ -181,27 +191,23 @@ const Development = () => {
             "From planning, analysis, design, implementation, testing & integration to maintenance, We engineer operable, transitional and maintanable solutions. Our team of developers work hand in hand to make sure the product at handhas the best code, functional features and the best user experience."
           }
           productImage={appDesign}
-          traits={renderMobileTraits()}
         />
       );
     }
   };
 
-  //-> get mobile traits
-  const renderMobileTraits = () => {
-    return (
-      <div>
-        <h5>Apps we develop</h5>
-        <div className="dev_trait_box">
-          <IoChevronForwardCircleOutline className="traitIcon" />
-          <p>Android Applications (Native) </p>
-        </div>
-        <div className="dev_trait_box">
-          <IoChevronForwardCircleOutline className="traitIcon" />
-          <p>iOS Applications (Native)</p>
-        </div>
-      </div>
-    );
+  //-> get traits
+  const renderSectionOneTraits = () => {
+    return <Traits secOneTraits={devSectionOneTraits} secOne={true} />;
+  };
+  const renderSectionTwoTraits = () => {
+    return <Traits secTwoTraits={devSectionTwoTraits} secTwo={true} />;
+  };
+  const renderSectionThreeTraits = () => {
+    return <Traits secThreeTraits={devSectionThreeTraits} secThree={true} />;
+  };
+  const renderSectionFourTraits = () => {
+    return <Traits secFourTraits={devSectionFourTraits} secFour={true} />;
   };
 
   return (

@@ -36,23 +36,7 @@ const Section = ({
                       <p>{intro}</p>
                     </div>
 
-                    <div>
-                      <h5>Our work's traits</h5>
-                      <div className="dev_trait_box">
-                        <IoChevronForwardCircleOutline
-                          size={"1em"}
-                          color={"#ffffff"}
-                        />
-                        <h6>Planning & Analysis</h6>
-                      </div>
-                      <div className="dev_trait_box">
-                        <IoChevronForwardCircleOutline
-                          size={"1em"}
-                          color={"#ffffff"}
-                        />
-                        <h6>Planning & Analysis</h6>
-                      </div>
-                    </div>
+                    <div>{traits}</div>
                   </div>
                 </div>
               </Grid>
@@ -125,30 +109,7 @@ const Section = ({
                     <p>{intro}</p>
                   </div>
 
-                  <div>
-                    <h5>Our tech stack</h5>
-                    <div className="dev_trait_box">
-                      <IoChevronForwardCircleOutline
-                        size={"1em"}
-                        color={"#ffffff"}
-                      />
-                      <h6>React & React Native</h6>
-                    </div>
-                    <div className="dev_trait_box">
-                      <IoChevronForwardCircleOutline
-                        size={"1em"}
-                        color={"#ffffff"}
-                      />
-                      <h6>Flutter</h6>
-                    </div>
-                    <div className="dev_trait_box">
-                      <IoChevronForwardCircleOutline
-                        size={"1em"}
-                        color={"#ffffff"}
-                      />
-                      <h6>Java</h6>
-                    </div>
-                  </div>
+                  <div>{traits}</div>
                 </div>
               </div>
             </Grid>
