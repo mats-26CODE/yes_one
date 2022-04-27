@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import _ from "lodash";
-import { IoCheckmarkDone, IoPeopleCircleOutline } from "react-icons/io5";
+import { IoPeopleCircleOutline } from "react-icons/io5";
 import { ImPen } from "react-icons/im";
 import { FaFan } from "react-icons/fa";
 import { FcIdea } from "react-icons/fc";

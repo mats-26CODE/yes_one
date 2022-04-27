@@ -32,7 +32,6 @@ import {
   selectDevSectionFourTraits,
 } from "../../features/developmentSlice";
 import SectionTwo from "./sections/SectionTwo";
-import { IoChevronForwardCircleOutline } from "react-icons/io5";
 import SectionThree from "./sections/SectionThree";
 import GetInTouch from "../usual/GetInTouch";
 import Traits from "./subComponents/Traits";

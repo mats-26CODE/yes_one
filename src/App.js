@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./ResponsiveApp.css";
 import CareerActions from "./actions/CareerActions";
 import DesignActions from "./actions/DesignActions";
 import DevelopmentActions from "./actions/DevelopmentActions";
@@ -9,6 +8,7 @@ import TeamActions from "./actions/TeamActions";
 
 //-> component imports 🚀
 import Main from "./components/Main";
+import "./Responsive.css";
 
 const App = () => {
   const getComponentsActions = () => {

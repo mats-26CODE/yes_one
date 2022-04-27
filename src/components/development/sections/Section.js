@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import { IoChevronForwardCircleOutline } from "react-icons/io5";
 import { isMobile } from "react-device-detect";
 
 const Section = ({
