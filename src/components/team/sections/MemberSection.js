@@ -273,8 +273,8 @@ const MemberSection = ({ brains, traits }) => {
   };
   return (
     <div>
-      {renderTeamTraits()}
-      {renderTeamBrains()}
+      <div className="team__box">{renderTeamTraits()}</div>
+      <div className="team__box">{renderTeamBrains()}</div>
     </div>
   );
 };

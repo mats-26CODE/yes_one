@@ -36,6 +36,7 @@ import { IoChevronForwardCircleOutline } from "react-icons/io5";
 import SectionThree from "./sections/SectionThree";
 import GetInTouch from "../usual/GetInTouch";
 import Traits from "./subComponents/Traits";
+import { isMobile } from "react-device-detect";
 
 const Development = () => {
   useEffect(() => {
@@ -73,7 +74,7 @@ const Development = () => {
     if (devSectionOneHeader && devSectionOneIntro && devSectionOneImage) {
       return (
         <Section
-          introLeft={false}
+          introLeft={isMobile ? true : false}
           artwork={true}
           artworkImage={`${devSectionOneImage.devSectionOneImage}`}
           traits={renderSectionOneTraits()}
@@ -85,12 +86,14 @@ const Development = () => {
           intro={`${devSectionOneIntro.devSectionOneIntro}`}
           noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
           noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
+          noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
+          noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
         />
       );
     } else {
       return (
         <Section
-          introLeft={false}
+          introLeft={isMobile ? true : false}
           artwork={true}
           artworkImage={`${appDesign}`}
           artworkSize={"cover"}
@@ -103,6 +106,8 @@ const Development = () => {
           }
           noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
           noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
+          noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
+          noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
         />
       );
     }
@@ -125,6 +130,8 @@ const Development = () => {
           intro={`${devSectionTwoIntro.devSectionTwoIntro}`}
           noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
           noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
+          noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
+          noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
         />
       );
     } else {
@@ -143,6 +150,8 @@ const Development = () => {
           }
           noteCalloutLeftOne={<NoteCalloutLeft top={true} slash={" </> "} />}
           noteCalloutLeftTwo={<NoteCalloutLeft top={false} slash={" </> "} />}
+          noteCalloutRightOne={<NoteCalloutRight top={true} slash={" </> "} />}
+          noteCalloutRightTwo={<NoteCalloutRight top={false} slash={" </> "} />}
         />
       );
     }
@@ -267,7 +276,7 @@ const Development = () => {
           {devQuote && devQuotee ? (
             <div className={"dev__quote_box"}>
               <div>
-                <p>{devQuote.devQuote}</p>
+                <p>"{devQuote.devQuote}"</p>
                 <h4>{devQuotee.devQuotee}</h4>
               </div>
             </div>

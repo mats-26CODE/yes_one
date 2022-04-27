@@ -1,10 +1,11 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import { isMobile } from "react-device-detect";
 
 //-> component imports
 
 const SectionTwo = ({
-  noteCalloutLeft,
+  noteCallout,
   heading,
   intro,
   button,
@@ -28,7 +29,12 @@ const SectionTwo = ({
 
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <div className={"section_two_art_box"}>
-            <div className={"note_left"}>{noteCalloutLeft}</div>
+            {isMobile ? (
+              <div className={"note_right"}>{noteCallout}</div>
+            ) : (
+              <div className={"note_left"}>{noteCallout}</div>
+            )}
+
             {artworkImage ? (
               <div>
                 <img src={artworkImage} alt={`${heading} artwork`} />

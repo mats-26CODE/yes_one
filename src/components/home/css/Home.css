@@ -8,7 +8,7 @@
 }
 
 .home_intro h4 {
-  font-size: 2.3rem;
+  font-size: 2.6rem;
   color: #ffffff;
   text-align: center;
   width: 68%;
@@ -18,22 +18,41 @@
 }
 
 .home_apps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+  width: 60%;
+  margin: 2rem auto;
 }
 
 .home_apps h5 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #bababa;
-  margin: 0 1rem 0 1rem;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* home cards */
 .home_cards_box {
   width: 80%;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
+}
+
+.home_card_heading {
+  width: 80%;
+  margin: 1rem auto;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.home_card_heading h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+  text-decoration-color: #f5a623;
+  text-decoration-thickness: 3px;
 }
 
 .home_card_one {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import { isMobile } from "react-device-detect";
 
 const Section = ({
   introLeft,
@@ -50,8 +51,25 @@ const Section = ({
                       <img src={artworkImage} alt={`${heading} artwork`} />
                     </div>
                   ) : null}
-                  <div className={"note_top_left"}>{noteCalloutLeftOne}</div>
-                  <div className={"note_bottom_left"}>{noteCalloutLeftTwo}</div>
+                  {isMobile ? (
+                    <div>
+                      <div className={"note_top_right"}>
+                        {noteCalloutRightOne}
+                      </div>
+                      <div className={"note_bottom_right"}>
+                        {noteCalloutRightTwo}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className={"note_top_left"}>
+                        {noteCalloutLeftOne}
+                      </div>
+                      <div className={"note_bottom_left"}>
+                        {noteCalloutLeftTwo}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </Grid>
             ) : (
@@ -80,10 +98,25 @@ const Section = ({
                       <img src={artworkImage} alt={`${heading} artwork`} />
                     </div>
                   ) : null}
-                  <div className={"note_top_right"}>{noteCalloutRightOne}</div>
-                  <div className={"note_bottom_right"}>
-                    {noteCalloutRightTwo}
-                  </div>
+                  {isMobile ? (
+                    <div>
+                      <div className={"note_top_left"}>
+                        {noteCalloutLeftOne}
+                      </div>
+                      <div className={"note_bottom_left"}>
+                        {noteCalloutLeftTwo}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className={"note_top_right"}>
+                        {noteCalloutRightOne}
+                      </div>
+                      <div className={"note_bottom_right"}>
+                        {noteCalloutRightTwo}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </Grid>
             ) : (

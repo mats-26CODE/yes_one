@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
-import { isBrowser } from "react-device-detect";
 import "./css/Careers.css";
 import { useSelector } from "react-redux";
 
@@ -102,39 +101,53 @@ const Careers = () => {
               <IoIosPeople size={"10em"} color={"#323232"} />
               <div>
                 <div className="career__love_box">
-                  {careerLoveOne ? (
-                    <h5>
-                      {careerLoveOne.careerLoveOne}{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                    </h5>
-                  ) : (
-                    <h5>
-                      Love technology ?{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />{" "}
-                    </h5>
-                  )}
-                  {careerLoveTwo ? (
-                    <h5>
-                      {careerLoveTwo.careerLoveTwo}{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                    </h5>
-                  ) : (
-                    <h5>
-                      Love technology ?{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                    </h5>
-                  )}
-                  {careerLoveThree ? (
-                    <h5>
-                      {careerLoveThree.careerLoveThree}{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                    </h5>
-                  ) : (
-                    <h5>
-                      Love technology ?{" "}
-                      <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                    </h5>
-                  )}
+                  <Grid container>
+                    {careerLoveOne ? (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          {careerLoveOne.careerLoveOne}{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                        </h5>
+                      </Grid>
+                    ) : (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          Love technology ?{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />{" "}
+                        </h5>
+                      </Grid>
+                    )}
+                    {careerLoveTwo ? (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          {careerLoveTwo.careerLoveTwo}{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                        </h5>
+                      </Grid>
+                    ) : (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          Love technology ?{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                        </h5>
+                      </Grid>
+                    )}
+                    {careerLoveThree ? (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          {careerLoveThree.careerLoveThree}{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                        </h5>
+                      </Grid>
+                    ) : (
+                      <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                        <h5>
+                          Love technology ?{" "}
+                          <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
+                        </h5>
+                      </Grid>
+                    )}
+                  </Grid>
                 </div>
 
                 {careerSpotHeader ? (

@@ -17,6 +17,7 @@ import {
   IoChevronBackCircleSharp,
   IoChevronForwardCircleSharp,
 } from "react-icons/io5";
+import { isMobile } from "react-device-detect";
 
 const SectionProject = () => {
   //-> redux data selected
@@ -29,7 +30,7 @@ const SectionProject = () => {
       return (
         <>
           <Swiper
-            slidesPerView={2}
+            slidesPerView={isMobile ? 1 : 2}
             autoplay={{
               delay: 3500,
               disableOnInteraction: false,

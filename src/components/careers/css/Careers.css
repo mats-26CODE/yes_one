@@ -1,117 +1,115 @@
 .careers_container {
-    width: 100%;
-    min-height: 100vh;
-    padding-bottom: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
 
 .careers_header_box {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 
 .careers_header_box h4 {
-    font-size: 2.3rem;
-    color: #ffffff;
-    text-align: center;
-    line-height: 1.6;
+  font-size: 2.3rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .careers_intro h5 {
-    font-size: 1.1rem;
-    color: #ffffff;
-    width: 68%;
-    margin: 1rem auto;
-    line-height: 1.6;
-    text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  width: 68%;
+  margin: 1rem auto;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .careers_section {
-    width: 80%;
-    margin: 2rem auto;
-    /* background-color: bisque; */
+  width: 80%;
+  margin: 2rem auto;
+  /* background-color: bisque; */
 }
 
 .careers_art_box {
-    display: grid;
-    place-items: center;
-    padding-bottom: 2rem;
+  display: grid;
+  place-items: center;
+  padding-bottom: 2rem;
 }
 
 .careers_art_box img {
-    width: 100%;
-    object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 }
 
 .career_post_container {
-    width: 90%;
-    margin: 2rem auto;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 .career_post_box {
-    display: flex;
-    justify-content: space-between
+  display: flex;
+  justify-content: space-between;
 }
 
 .career_post_info {
-    min-height: 140px;
-    background-color: #323232;
-    border-radius: 1.2rem;
-    padding: 1rem;
-    display: grid;
-    place-items: center;
+  min-height: 140px;
+  background-color: #323232;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
 }
 
 .career_post_info h4 {
-    font-size: 1.3rem;
-    color: #ffffff;
-    line-height: 1.6;
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .career_post_info h5 {
-    font-size: 1rem;
-    color: #F5A623;
-    line-height: 1.6;
+  font-size: 1rem;
+  color: #f5a623;
+  line-height: 1.6;
 }
 
 .career_post_info p {
-    font-size: 1rem;
-    color: #ffffff;
-    line-height: 1.6;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .career_post_arrow {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }
 
 .career_link {
-    transition: all .5s;
+  transition: all 0.5s;
 }
 
 .career_link:hover {
-    cursor: pointer;
-    transition: all .5s;
-    transform: scale(0.9);
+  cursor: pointer;
+  transition: all 0.5s;
+  transform: scale(0.9);
 }
 
 .career_outro {
-    text-align: center;
+  text-align: center;
 }
 
 .career_outro h4 {
-    font-size: 2.3rem;
-    color: #ffffff;
-    line-height: 1.6;
+  font-size: 1.8rem;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .career__love_box {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
+.career__love_box h5,
 .career_outro h5 {
-    font-size: 1.1rem;
-    color: #ffffff;
-    line-height: 1.6;
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.6;
 }

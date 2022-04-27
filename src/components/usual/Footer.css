@@ -1,186 +1,186 @@
 /*footer */
 footer {
-    width: 100%;
-    min-height: 500px;
-    background-color: #1c1c1c;
+  width: 100%;
+  min-height: 500px;
+  background-color: #1c1c1c;
 }
 
 .footer__box {
-    padding: 4rem;
+  padding: 4rem;
 }
 
-.footer__nav_links>div p {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    line-height: 2;
-    color: whitesmoke;
-    font-weight: 600;
-    text-transform: capitalize;
-    transition: all 0.5s;
+.footer__nav_links > div p {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: whitesmoke;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.5s;
 }
 
-.footer__nav_links>div p:hover {
-    transform: translateX(3px);
+.footer__nav_links > div p:hover {
+  transform: translateX(3px);
 }
 
-.footer__nav_links>div p a {
-    color: whitesmoke;
-    text-decoration: none;
-    transition: all 0.5s;
+.footer__nav_links > div p a {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 0.5s;
 }
 
-.footer__nav_links>div p a:hover {
-    border-bottom: 0.05rem solid #F5A623;
+.footer__nav_links > div p a:hover {
+  border-bottom: 0.05rem solid #f5a623;
 }
 
-.footer__expertise_box>div:first-child,
-.footer__offices_box>div:first-child,
-.footer__offices_box>div:first-child,
-.footer__social>div:first-child {
-    margin-bottom: 1rem;
+.footer__expertise_box > div:first-child,
+.footer__offices_box > div:first-child,
+.footer__offices_box > div:first-child,
+.footer__social > div:first-child {
+  margin-bottom: 1rem;
 }
 
-.footer__expertise_box>div:first-child h4,
-.footer__offices_box>div:first-child h4,
-.footer__social>div:first-child h4 {
-    font-size: 1.1rem;
-    font-family: "FuturaMedium", "NunitoRegular", sans-serif;
-    text-transform: uppercase;
-    color: #F5A623;
+.footer__expertise_box > div:first-child h4,
+.footer__offices_box > div:first-child h4,
+.footer__social > div:first-child h4 {
+  font-size: 1.1rem;
+  font-family: "FuturaMedium", "NunitoRegular", sans-serif;
+  text-transform: uppercase;
+  color: #f5a623;
 }
 
-.footer__expertise_box>div:last-child p {
-    color: whitesmoke;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    line-height: 1.8;
+.footer__expertise_box > div:last-child p {
+  color: whitesmoke;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.8;
 }
 
 .footer__offices_box {
-    width: 80%;
+  width: 80%;
 }
 
-.footer__offices_box>div:nth-child(2) {
-    border: 0.02rem solid #F5A623;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    background-image: url("/src/assets/backgrounds/world.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+.footer__offices_box > div:nth-child(2) {
+  border: 0.02rem solid #f5a623;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-image: url("/src/assets/backgrounds/world.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-.footer__offices_box>div:nth-child(2)>div:first-child {
-    display: flex;
-    align-items: center;
+.footer__offices_box > div:nth-child(2) > div:first-child {
+  display: flex;
+  align-items: center;
 }
 
-.footer__offices_box>div:nth-child(2)>div:first-child h4 {
-    font-size: 1.2rem;
-    color: whitesmoke;
-    text-transform: capitalize;
-    margin-left: 1rem;
+.footer__offices_box > div:nth-child(2) > div:first-child h4 {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  text-transform: capitalize;
+  margin-left: 1rem;
 }
 
-.footer__offices_box>div:nth-child(2)>div:last-child p {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    line-height: 2;
-    color: whitesmoke;
-    font-weight: 600;
-    text-transform: capitalize;
+.footer__offices_box > div:nth-child(2) > div:last-child p {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: whitesmoke;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-.footer__offices_box>div:last-child {
-    margin-top: 1rem;
+.footer__offices_box > div:last-child {
+  margin-top: 1rem;
 }
 
-.footer__offices_box>div:last-child h4 {
-    font-size: 1rem;
-    font-family: "FuturaMedium", "NunitoRegular", sans-serif;
-    text-transform: capitalize;
-    color: #F5A623;
-    margin-bottom: 0.5rem;
+.footer__offices_box > div:last-child h4 {
+  font-size: 1rem;
+  font-family: "FuturaMedium", "NunitoRegular", sans-serif;
+  text-transform: capitalize;
+  color: #f5a623;
+  margin-bottom: 0.5rem;
 }
 
-.footer__offices_box>div:last-child p {
-    color: whitesmoke;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    line-height: 1.8;
+.footer__offices_box > div:last-child p {
+  color: whitesmoke;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.8;
 }
 
 .footer__social {
-    float: right;
+  float: right;
 }
 
-.footer__social>div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.footer__social > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.footer__social>div:nth-child(2)>div {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 0.01rem solid #F5A623;
-    display: grid;
-    place-items: center;
-    margin: 0 0.1rem 0 0.1rem;
+.footer__social > div:nth-child(2) > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0.01rem solid #f5a623;
+  display: grid;
+  place-items: center;
+  margin: 0 0.1rem 0 0.1rem;
 }
 
-.footer__social>div:last-child {
-    margin-top: 2rem;
+.footer__social > div:last-child {
+  margin-top: 2rem;
 }
 
-.footer__social>div:last-child p {
-    color: whitesmoke;
-    font-size: 1rem;
-    letter-spacing: 1px;
+.footer__social > div:last-child p {
+  color: whitesmoke;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 .socialIcon {
-    color: white;
-    font-size: 1.5rem;
-    border-radius: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 1rem;
 }
 
 .locationIcon {
-    background-image: linear-gradient(to right, #f83600 0%, #F5A623 100%);
-    color: white;
-    font-size: 2.5rem;
-    border-radius: 1rem;
+  background-image: linear-gradient(to right, #f83600 0%, #f5a623 100%);
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 1rem;
 }
 
 .footer__registration_box,
 .footer__copyright,
 .footer__logo {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
-.footer__registration_box>div p {
-    font-size: 0.9rem;
-    color: whitesmoke;
-    letter-spacing: 1px;
-    line-height: 1.4;
+.footer__registration_box > div p {
+  font-size: 0.9rem;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  line-height: 1.4;
 }
 
-.footer__copyright>div p {
-    font-size: 1rem;
-    color: whitesmoke;
-    letter-spacing: 1px;
-    line-height: 1.4;
-    text-align: center;
+.footer__copyright > div p {
+  font-size: 1rem;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .footer__logo {
-    float: right;
+  float: right;
 }
 
 .footer__logo h3 {
-    font-size: 1.5rem;
-    color: whitesmoke;
-    letter-spacing: 1px;
-    line-height: 1.4;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  line-height: 1.4;
 }

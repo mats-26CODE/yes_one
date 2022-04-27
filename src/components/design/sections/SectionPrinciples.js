@@ -144,7 +144,7 @@ const SectionPrinciples = ({ principleImage, principleData }) => {
           </div>
         </Grid>
       </Grid>
-      {renderPrinciples()}
+      <div className="design__principles_cards">{renderPrinciples()}</div>
     </div>
   );
 };

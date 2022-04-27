@@ -33,6 +33,7 @@ import {
   selectSectionThreeIntro,
   selectSectionThreeImage,
 } from "../../features/homeSlice";
+import { isMobile } from "react-device-detect";
 
 const Home = () => {
   useEffect(() => {
@@ -56,29 +57,33 @@ const Home = () => {
       const productsData = homeProducts.products;
       const products = _.map(productsData, (product) => product);
       return (
-        <div className={"home_apps"}>
+        <Grid container>
           {products.map((product, index) => {
             return (
-              <h5 key={index}>
-                {product.homeProduct}{" "}
-                <span>
-                  <FaFan className={"fanIcon"} />
-                </span>
-              </h5>
+              <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                <h5 key={index}>
+                  {product.homeProduct}{" "}
+                  <span>
+                    <FaFan className={"fanIcon"} />
+                  </span>
+                </h5>
+              </Grid>
             );
           })}
-        </div>
+        </Grid>
       );
     } else {
       return (
-        <div className={"home_apps"}>
-          <h5>
-            Mobile Apps{" "}
-            <span>
-              <FaFan className={"fanIcon"} />
-            </span>
-          </h5>
-        </div>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            <h5>
+              Mobile Apps{" "}
+              <span>
+                <FaFan className={"fanIcon"} />
+              </span>
+            </h5>
+          </Grid>
+        </Grid>
       );
     }
   };
@@ -100,14 +105,17 @@ const Home = () => {
             </div>
           </Grid>
 
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <div>{productsData()}</div>
-          </Grid>
+          <div className="home_apps">{productsData()}</div>
         </Grid>
       </div>
 
       <div className={"home_cards_box"}>
         <Grid container>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <div className={"home_card_heading"}>
+              <h4>We create Solutions that are</h4>
+            </div>
+          </Grid>
           <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
             <div className={"home_card_one"}>
               <div>
@@ -186,7 +194,7 @@ const Home = () => {
 
       <div>
         <SectionOne
-          noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
+          noteCallout={<NoteCalloutRight slash={"</>"} top={true} />}
           artClassName={"section_art_box"}
           bgImage={bgOne}
           artworkImage={
@@ -210,17 +218,30 @@ const Home = () => {
 
       <div>
         <SectionTwo
-          noteCalloutLeft={
-            <NoteCalloutLeft
-              icon={
-                <ImPen
-                  color={"#ffffff"}
-                  size={"1.2em"}
-                  style={{ transform: "rotate(-90deg)" }}
-                />
-              }
-              top={true}
-            />
+          noteCallout={
+            isMobile ? (
+              <NoteCalloutRight
+                icon={
+                  <ImPen
+                    color={"#ffffff"}
+                    size={"1.2em"}
+                    style={{ transform: "rotate(-90deg)" }}
+                  />
+                }
+                top={true}
+              />
+            ) : (
+              <NoteCalloutLeft
+                icon={
+                  <ImPen
+                    color={"#ffffff"}
+                    size={"1.2em"}
+                    style={{ transform: "rotate(-90deg)" }}
+                  />
+                }
+                top={true}
+              />
+            )
           }
           bgImage={bgOne}
           artworkImage={
@@ -252,7 +273,7 @@ const Home = () => {
             />
           }
           artClassName={"team_art_box"}
-          noteCalloutRight={
+          noteCallout={
             <NoteCalloutRight
               icon={<IoPeopleCircleOutline color={"#F5F5F5"} size={"1.5em"} />}
               top={true}
@@ -278,17 +299,30 @@ const Home = () => {
 
       <div>
         <SectionTwo
-          noteCalloutLeft={
-            <NoteCalloutLeft
-              icon={
-                <FcIdea
-                  color={"#ffffff"}
-                  size={"1.2em"}
-                  // style={{ transform: "rotate(-90deg)" }}
-                />
-              }
-              top={true}
-            />
+          noteCallout={
+            isMobile ? (
+              <NoteCalloutRight
+                icon={
+                  <FcIdea
+                    color={"#ffffff"}
+                    size={"1.2em"}
+                    // style={{ transform: "rotate(-90deg)" }}
+                  />
+                }
+                top={true}
+              />
+            ) : (
+              <NoteCalloutLeft
+                icon={
+                  <FcIdea
+                    color={"#ffffff"}
+                    size={"1.2em"}
+                    // style={{ transform: "rotate(-90deg)" }}
+                  />
+                }
+                top={true}
+              />
+            )
           }
           bgImage={bgOne}
           artworkImage={
@@ -307,7 +341,7 @@ const Home = () => {
 
       <div>
         <SectionOne
-          noteCalloutRight={<NoteCalloutRight slash={"< / >"} top={true} />}
+          noteCallout={<NoteCalloutRight slash={"</>"} top={true} />}
           artClassName={"section_art_box"}
           bgImage={bgOne}
           artworkImage={
