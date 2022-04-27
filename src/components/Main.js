@@ -45,9 +45,9 @@ class Main extends React.Component {
           </BrowserView>
 
           <MobileView>
-            {/* <div className={"nav__logo_mobile"}>
+            <div className="nav__logo_mobile">
               <h4>Ostri</h4>
-            </div> */}
+            </div>
 
             <HiOutlineMenuAlt3
               className={"humburger__menu"}

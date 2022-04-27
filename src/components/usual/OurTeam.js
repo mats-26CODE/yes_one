@@ -1,12 +1,14 @@
 import React from "react";
+import _ from "lodash";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import "./OurTeam.css";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   small: {
-    width: theme.spacing(12),
-    height: theme.spacing(12),
+    width: theme.spacing(14),
+    height: theme.spacing(14),
     margin: theme.spacing(2),
   },
   large: {
@@ -16,28 +18,105 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const OurTeam = ({ memberOne, memberTwo, memberThree, memberFour }) => {
+const OurTeam = ({ team }) => {
   const classes = useStyles();
-  return (
-    <div className={"our_team_container"}>
-      <div>
-        <Avatar className={classes.small} src={`${memberOne}`}>
-          M
-        </Avatar>
-        <Avatar className={classes.large} src={`${memberTwo}`}>
-          A
-        </Avatar>
-      </div>
-      <div>
-        <Avatar className={classes.large} src={`${memberThree}`}>
-          T
-        </Avatar>
-        <Avatar className={classes.small} src={`${memberFour}`}>
-          Y
-        </Avatar>
-      </div>
-    </div>
-  );
+
+  const renderTeam = () => {
+    if (!_.isEmpty(team)) {
+      const teamData = team.teamBrains;
+      const _team = _.map(teamData, (team) => team);
+      return (
+        <Grid container>
+          {_team.map((member, index) => {
+            const getMember = () => {
+              if (index === 0) {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.small}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              } else if (index === 1) {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.large}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              } else if (index === 2) {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.large}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              } else if (index === 3) {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.small}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              } else if (index === 4) {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.small}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              } else {
+                return (
+                  <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
+                    <div>
+                      <Avatar
+                        className={classes.small}
+                        src={`${member.brainImage}`}
+                      >
+                        O
+                      </Avatar>
+                    </div>
+                  </Grid>
+                );
+              }
+            };
+            return <>{getMember()}</>;
+          })}
+        </Grid>
+      );
+    }
+  };
+
+  return <div className={"our_team_container"}>{renderTeam()}</div>;
 };
 
 export default OurTeam;

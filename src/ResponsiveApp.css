@@ -20,9 +20,13 @@
   top: 0;
   width: 100%;
   height: 100vh;
-  background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  background: #171719;
+  box-shadow: 20px 20px 25px #141415, -20px -20px 25px #1a1a1d;
   z-index: 2500;
+
+  /* animate.css animation */
+  animation: bounceInDown; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 .mobile__menu_wrapper {
@@ -38,7 +42,7 @@
 }
 
 .mobile__menu_wrapper ol li {
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-family: "FreeStyleScript", "FuturaBook", sans-serif;
   letter-spacing: 2px;
   font-weight: bolder;
@@ -371,16 +375,25 @@
 
   /* MOBILE MENU */
   .nav__logo_mobile {
-    margin: 0.6rem 0 0 1rem;
-    width: 20%;
+    position: fixed;
+    left: 1rem;
+    top: 0.4rem;
+    width: 25%;
+    background-color: rgba(28, 28, 28, 0.4);
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 2rem;
   }
 
   .nav__logo_mobile h4 {
     font-family: "FreeStyleScript", "FuturaBook", sans-serif;
-    font-size: 2.4rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     font-weight: bolder;
-    background: -webkit-linear-gradient(#b5b3b4, #f0ad00);
+    background: -webkit-linear-gradient(#eeeeee, #f0ad00);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -411,11 +424,15 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 50%;
+    width: 100%;
     height: 100vh;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    background: #171719;
+    box-shadow: 20px 20px 25px #141415, -20px -20px 25px #1a1a1d;
     z-index: 2500;
+
+    /* animate.css animation */
+    animation: bounceInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
   }
 
   .mobile__menu_wrapper {
@@ -431,11 +448,11 @@
   }
 
   .mobile__menu_wrapper ol li {
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "FreeStyleScript", "FuturaBook", sans-serif;
     letter-spacing: 2px;
     font-weight: bolder;
-    background: -webkit-linear-gradient(#b5b3b4, #f0ad00);
+    background: -webkit-linear-gradient(#eeeeee, #f0ad00);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -451,16 +468,25 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) {
   .nav__logo_mobile {
-    margin: 0.6rem 0 0 1rem;
-    width: 20%;
+    position: fixed;
+    left: 1rem;
+    top: 0.4rem;
+    width: 25%;
+    background-color: rgba(28, 28, 28, 0.4);
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 2rem;
   }
 
   .nav__logo_mobile h4 {
     font-family: "FreeStyleScript", "FuturaBook", sans-serif;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     letter-spacing: 2px;
     font-weight: bolder;
-    background: -webkit-linear-gradient(#b5b3b4, #f0ad00);
+    background: -webkit-linear-gradient(#eeeeee, #f0ad00);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -498,12 +524,12 @@
     top: 0;
     width: 50%;
     height: 100vh;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    background: #171719;
+    box-shadow: 20px 20px 25px #141415, -20px -20px 25px #1a1a1d;
     z-index: 2500;
 
     /* animate.css animation */
-    animation: fadeInRight; /* referring directly to the animation's @keyframe declaration */
+    animation: bounceInDown; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 1s; /* don't forget to set a duration! */
   }
 

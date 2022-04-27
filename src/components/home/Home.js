@@ -31,9 +31,9 @@ import {
   selectSectionTwoImage,
   selectSectionThreeHeader,
   selectSectionThreeIntro,
-  selectSectionThreeImage,
 } from "../../features/homeSlice";
 import { isMobile } from "react-device-detect";
+import { selectTeamBrains } from "../../features/teamSlice";
 
 const Home = () => {
   useEffect(() => {
@@ -50,7 +50,7 @@ const Home = () => {
   const sectionTwoImage = useSelector(selectSectionTwoImage);
   const sectionThreeHeader = useSelector(selectSectionThreeHeader);
   const sectionThreeIntro = useSelector(selectSectionThreeIntro);
-  const sectionThreeImage = useSelector(selectSectionThreeImage);
+  const teamBrains = useSelector(selectTeamBrains);
 
   const productsData = () => {
     if (!_.isEmpty(homeProducts)) {
@@ -263,15 +263,7 @@ const Home = () => {
 
       <div>
         <SectionOne
-          team={
-            <OurTeam
-              memberOne={
-                sectionThreeImage
-                  ? `${sectionThreeImage.sectionThreeImage}`
-                  : null
-              }
-            />
-          }
+          team={<OurTeam team={teamBrains} />}
           artClassName={"team_art_box"}
           noteCallout={
             <NoteCalloutRight
