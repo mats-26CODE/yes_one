@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   homeHeader: "",
   homeProducts: {},
+  homeCards: {},
   sectionOneHeader: "",
   sectionOneIntro: "",
   sectionOneImage: "",
@@ -25,6 +26,9 @@ export const homeSlice = createSlice({
     },
     products(state, action) {
       state.homeProducts = action.payload;
+    },
+    updateCards(state, action) {
+      state.homeCards = action.payload;
     },
     secOneHeader(state, action) {
       state.sectionOneHeader = action.payload;
@@ -62,6 +66,7 @@ export const homeSlice = createSlice({
 export const {
   header,
   products,
+  updateCards,
   secOneHeader,
   secOneIntro,
   secOneImage,
@@ -71,7 +76,7 @@ export const {
   secThreeHeader,
   secThreeIntro,
   secThreeImage,
-  comboProjects
+  comboProjects,
 } = homeSlice.actions;
 
 // // The function below is called a selector and allows us to select a value from
@@ -79,16 +84,17 @@ export const {
 // // in the slice file.
 export const selectHomeHeader = (state) => state.home.homeHeader;
 export const selectHomeProducts = (state) => state.home.homeProducts;
+export const selectHomeCards = (state) => state.home.homeCards;
 export const selectSectionOneHeader = (state) => state.home.sectionOneHeader;
 export const selectSectionOneIntro = (state) => state.home.sectionOneIntro;
 export const selectSectionOneImage = (state) => state.home.sectionOneImage;
 export const selectSectionTwoHeader = (state) => state.home.sectionTwoHeader;
 export const selectSectionTwoIntro = (state) => state.home.sectionTwoIntro;
 export const selectSectionTwoImage = (state) => state.home.sectionTwoImage;
-export const selectSectionThreeHeader = (state) => state.home.sectionThreeHeader;
+export const selectSectionThreeHeader = (state) =>
+  state.home.sectionThreeHeader;
 export const selectSectionThreeIntro = (state) => state.home.sectionThreeIntro;
 export const selectSectionThreeImage = (state) => state.home.sectionThreeImage;
 export const selectComboProjects = (state) => state.home.homeComboProjects;
-
 
 export default homeSlice.reducer;

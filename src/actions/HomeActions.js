@@ -14,6 +14,7 @@ import {
   secThreeIntro,
   secThreeImage,
   comboProjects,
+  updateCards,
 } from "../features/homeSlice";
 
 const HomeActions = () => {
@@ -72,6 +73,27 @@ const HomeActions = () => {
       }
     };
     fetchHomeProducts();
+  }, [dispatch]);
+
+  useEffect(() => {
+    const fetchHomeCards = async () => {
+      try {
+        db.collection("home")
+          .doc("homeCards")
+          .collection("all")
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            dispatch(
+              updateCards({
+                homeCards: data,
+              })
+            );
+          });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchHomeCards();
   }, [dispatch]);
 
   useEffect(() => {

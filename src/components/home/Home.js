@@ -31,9 +31,11 @@ import {
   selectSectionTwoImage,
   selectSectionThreeHeader,
   selectSectionThreeIntro,
+  selectHomeCards,
 } from "../../features/homeSlice";
 import { isMobile } from "react-device-detect";
 import { selectTeamBrains } from "../../features/teamSlice";
+import SectionCards from "./sections/SectionCards";
 
 const Home = () => {
   useEffect(() => {
@@ -42,6 +44,7 @@ const Home = () => {
   //-> home details from redux store
   const homeHeader = useSelector(selectHomeHeader);
   const homeProducts = useSelector(selectHomeProducts);
+  const homeCards = useSelector(selectHomeCards);
   const sectionOneHeader = useSelector(selectSectionOneHeader);
   const sectionOneIntro = useSelector(selectSectionOneIntro);
   const sectionOneImage = useSelector(selectSectionOneImage);
@@ -116,80 +119,11 @@ const Home = () => {
               <h4>We create Solutions that are</h4>
             </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-            <div className={"home_card_one"}>
-              <div>
-                <h4>Operable</h4>
-              </div>
-              <div>
-                <div>
-                  <h5>Usability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Efficiency</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Correctness</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Functionality</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-              </div>
-            </div>
-          </Grid>
-
-          <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-            <div className={"home_card_two"}>
-              <div>
-                <div>
-                  <h5>Portability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Adaptability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Reusability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-              </div>
-              <div>
-                <h4>Transitional</h4>
-              </div>
-            </div>
-          </Grid>
-
-          <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-            <div className={"home_card_one"}>
-              <div>
-                <h4>Maintanable</h4>
-              </div>
-              <div>
-                <div>
-                  <h5>Maintanability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Flexibility</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Scalability</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-                <div>
-                  <h5>Modularity</h5>
-                  <IoCheckmarkDone color={"#F5A623"} size={"1.1em"} />
-                </div>
-              </div>
-            </div>
-          </Grid>
         </Grid>
+
+        <div>
+          <SectionCards cards={homeCards} />
+        </div>
       </div>
 
       <div>
